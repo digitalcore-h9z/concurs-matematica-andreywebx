@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --blue-dark: #0d2857; /* hero background */
+  --blue-mid: #0f3d8c; /* navbar */
+  --blue-main: #1a5eb8; /* butoane */
+  --blue-pale: #e8f1fb; /* secțiuni deschise */
+  --accent: #f5a623; /* highlight, iconițe */
+}
+
+html {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  padding-bottom: 1000px;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  align-items: center; /* aliniere verticală centru */
+  justify-content: space-between; /* logo în stânga, link-uri în dreapta */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 6px;
+}
+
+.nav-links ul,
+.nav-links li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  margin: 1rem;
+  color: #00171f;
+}
+
+.nav-links {
+  margin-right: 2rem;
+}
+
+.nav-links li .blob {
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 32px;
+  z-index: 0;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+/* apare la hover si pe linkul activ */
+.nav-links li:hover .blob,
+.nav-links li.active .blob {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--blue-mid);
+  font-weight: 600;
+  margin-left: 2rem;
+}
+
+#home img {
+  max-width: 700px;
+  max-height: 700px;
+  margin-right: 3rem;
+}
+
+#home {
+  margin-left: 3rem;
+  padding: 90px 0;
+  font-size: 18pt;
+}
+
+.home-wrapper h3 {
+  color: var(--blue-mid);
+}
+
+.home-detail {
+  color: var(--blue-dark);
+}
+
+.left-section-home {
+  max-width: 700px;
+}
+
+.home-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+#home h3,
+#home p,
+#home a {
+  margin-bottom: 1rem;
+}
+
+.formule-btn,
+.lessons-btn {
+  display: inline-block;
+  margin: 1rem;
+}
+
+.call-to-action-btns {
+  margin-top: 2rem;
+}
+
+.formule-btn a {
+  background-color: var(--blue-main);
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all ease 0.3s;
+}
+.formule-btn a:hover {
+  background-color: var(--blue-dark);
+}
+
+.lessons-btn a {
+  border: 2px solid var(--blue-main);
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all ease 0.3s;
+}
+
+.lessons-btn a:hover {
+  background-color: var(--blue-main);
+  color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  .right-section img {
+    width: 300px;
+    height: 300px;
+  }
+
+  #home {
+    font-size: 14pt;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+  }
+  #home img {
+    margin-right: 0;
+  }
+  .nav-links {
+    display: none;
+  }
+  .home-wrapper {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 3rem;
+    margin: 0 !important;
+    width: 100%;
+    height: auto !important;
+  }
+
+  .right-section {
+    order: -1; /* mută imaginea prima */
+  }
+  .card-1,
+  .card-2,
+  .card-3 {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 3rem;
+    width: 100%;
+    height: auto;
+  }
+
+  .card-1 img,
+  .card-2 img,
+  .card-3 img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+}
+
+.lessons-section {
+  padding: 120px 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-1 img,
+.card-2 img,
+.card-3 img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-1 p,
+.card-2 p,
+.card-3 p {
+  margin-top: 1rem;
+}
+
+.card-1,
+.card-2,
+.card-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 1rem;
+  border: 2px solid var(--blue-main);
+  transition: all ease 0.3s;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 450px;
+  height: 450px;
+}
+
+.card-1:hover,
+.card-2:hover,
+.card-3:hover {
+  box-shadow: 0 8px 8px var(--blue-main);
+  transform: translateY(-5px);
+}
+
+.title-lessons {
+  text-align: center;
+  color: var(--blue-main);
+  margin-bottom: 1rem;
+}
