@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" width="200" height="210">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 13px; fill: #1a1a1a; font-style: italic; }
+      .height { stroke: #555; stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    </style>
+  </defs>
+  <!-- Corp cilindru -->
+  <rect x="40" y="40" width="120" height="130" fill="#f0f4ff" fill-opacity="0.6"/>
+  <!-- Elipsa de jos -->
+  <ellipse cx="100" cy="170" rx="60" ry="18" class="solid" fill="#e0e8ff" fill-opacity="0.7"/>
+  <!-- Jumatatea din spate a elipsei de sus (linie punctata) -->
+  <path d="M40,40 A60,18 0 0 0 160,40" class="hidden"/>
+  <!-- Jumatatea din fata a elipsei de sus -->
+  <path d="M40,40 A60,18 0 0 1 160,40" class="solid"/>
+  <!-- Linii laterale -->
+  <line x1="40" y1="40" x2="40" y2="170" class="solid"/>
+  <line x1="160" y1="40" x2="160" y2="170" class="solid"/>
+  <!-- Raza -->
+  <line x1="100" y1="40" x2="160" y2="40" class="height"/>
+  <text x="122" y="35" class="label">r</text>
+  <!-- Inaltimea -->
+  <line x1="172" y1="40" x2="172" y2="170" class="height"/>
+  <line x1="168" y1="40" x2="176" y2="40" style="stroke:#555;stroke-width:1;fill:none;"/>
+  <line x1="168" y1="170" x2="176" y2="170" style="stroke:#555;stroke-width:1;fill:none;"/>
+  <text x="177" y="112" class="label">h</text>
+</svg>

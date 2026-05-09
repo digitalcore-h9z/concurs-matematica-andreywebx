@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" width="200" height="210">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 13px; fill: #1a1a1a; font-style: italic; }
+      .height { stroke: #555; stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    </style>
+  </defs>
+  <!-- Varful piramidei -->
+  <!-- Baza (paralelogram perspectiva) -->
+  <polygon points="30,150 130,150 165,110 65,110" class="solid" fill="#f0f4ff" fill-opacity="0.5"/>
+  <!-- Muchii ascunse ale bazei -->
+  <line x1="30" y1="150" x2="65" y2="110" class="hidden"/>
+  <!-- Fetele laterale -->
+  <polygon points="100,20 30,150 130,150" class="solid" fill="#e0e8ff" fill-opacity="0.5"/>
+  <polygon points="100,20 130,150 165,110" class="solid" fill="#d0dbff" fill-opacity="0.5"/>
+  <line x1="100" y1="20" x2="65" y2="110" class="hidden"/>
+  <!-- Inaltimea -->
+  <line x1="100" y1="20" x2="97" y2="130" class="height"/>
+  <line x1="93" y1="130" x2="101" y2="130" style="stroke:#555;stroke-width:1;fill:none;"/>
+  <circle cx="100" cy="20" r="2.5" fill="#1a1a1a"/>
+  <!-- Etichete -->
+  <text x="72" y="168" class="label">a</text>
+  <text x="108" y="82" class="label">H</text>
+  <text x="152" y="143" class="label">a</text>
+</svg>

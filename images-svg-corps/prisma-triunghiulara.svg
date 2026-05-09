@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" width="220" height="200">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 13px; fill: #1a1a1a; font-style: italic; }
+    </style>
+  </defs>
+  <!-- Baza din spate (triunghi) - muchii vizibile -->
+  <line x1="55" y1="40" x2="170" y2="40" class="solid"/>
+  <line x1="55" y1="40" x2="112" y2="130" class="hidden"/>
+  <line x1="170" y1="40" x2="112" y2="130" class="hidden"/>
+  <!-- Baza din fata (triunghi) -->
+  <polygon points="20,80 135,80 77,170" class="solid" fill="#f0f4ff" fill-opacity="0.5"/>
+  <!-- Fetele laterale -->
+  <line x1="55" y1="40" x2="20" y2="80" class="solid"/>
+  <line x1="170" y1="40" x2="135" y2="80" class="solid"/>
+  <line x1="112" y1="130" x2="77" y2="170" class="hidden"/>
+  <!-- Fata laterala dreapta -->
+  <polygon points="170,40 135,80 77,170 112,130" class="solid" fill="#dce4ff" fill-opacity="0.4"/>
+  <!-- Fata de sus -->
+  <polygon points="55,40 170,40 135,80 20,80" class="solid" fill="#e8eeff" fill-opacity="0.4"/>
+  <!-- Etichete -->
+  <text x="72" y="95" class="label">a</text>
+  <text x="107" y="175" class="label">H</text>
+  <text x="155" y="65" class="label">l</text>
+</svg>

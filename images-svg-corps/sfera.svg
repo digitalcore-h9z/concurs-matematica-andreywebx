@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 13px; fill: #1a1a1a; font-style: italic; }
+      .height { stroke: #555; stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    </style>
+  </defs>
+  <!-- Sfera -->
+  <circle cx="100" cy="100" r="75" class="solid" fill="#f0f4ff" fill-opacity="0.6"/>
+  <!-- Ecuatorul (elipsa orizontala) - jumatate ascunsa -->
+  <path d="M25,100 A75,22 0 0 0 175,100" class="hidden"/>
+  <!-- Ecuatorul - jumatate vizibila -->
+  <path d="M25,100 A75,22 0 0 1 175,100" class="solid"/>
+  <!-- Meridianul vertical - jumatate ascunsa -->
+  <path d="M100,25 A22,75 0 0 0 100,175" class="hidden"/>
+  <!-- Meridianul vertical - jumatate vizibila -->
+  <path d="M100,25 A22,75 0 0 1 100,175" class="solid"/>
+  <!-- Centrul -->
+  <circle cx="100" cy="100" r="2.5" fill="#1a1a1a"/>
+  <!-- Raza -->
+  <line x1="100" y1="100" x2="164" y2="65" class="height"/>
+  <text x="138" y="78" class="label">r</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 14px; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <!-- Fata frontala -->
+  <polygon points="40,60 140,60 140,160 40,160" class="solid" fill="#f0f4ff" fill-opacity="0.5"/>
+  <!-- Fata sus -->
+  <polygon points="40,60 80,20 180,20 140,60" class="solid" fill="#e8eeff" fill-opacity="0.5"/>
+  <!-- Fata dreapta -->
+  <polygon points="140,60 180,20 180,120 140,160" class="solid" fill="#dce4ff" fill-opacity="0.5"/>
+  <!-- Muchii ascunse -->
+  <line x1="40" y1="160" x2="80" y2="120" class="hidden"/>
+  <line x1="80" y1="120" x2="180" y2="120" class="hidden"/>
+  <line x1="80" y1="120" x2="80" y2="20" class="hidden"/>
+  <!-- Eticheta latura -->
+  <text x="85" y="115" class="label" font-style="italic">a</text>
+</svg>

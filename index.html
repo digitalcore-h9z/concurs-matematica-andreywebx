@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <title>Matematica - Geometrie</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -59,7 +60,7 @@
               </svg>
             </li>
             <li>
-              <a href="#">Formule</a
+              <a href="#formulas-section">Formule</a
               ><svg
                 class="blob"
                 viewBox="0 0 100 36"
@@ -92,10 +93,10 @@
           </p>
           <div class="call-to-action-btns">
             <div class="formule-btn">
-              <a href="#">Formule</a>
+              <a href="#formulas-section">Formule</a>
             </div>
             <div class="lessons-btn">
-              <a href="#">Lectii</a>
+              <a href="#lessons-section">Lectii</a>
             </div>
           </div>
         </div>
@@ -110,23 +111,112 @@
       <div class="cards">
         <div class="card-1">
           <img src="/backgrounds/cards-images/2308530.jpg" alt="" />
-          <h3>Figuri geometrice</h3>
+          <h3>Corpuri geometrice</h3>
           <p>
-            cubul, paralelipipedul, prisma, piramida, cilindrul, conul, sfera.
+            Piramida, piramida regulata, tetraedrul regulat, prisma dreapta,
+            paralelipipedul dreptunghic, cubul
           </p>
+          <a href="#" class="view-btn">Acceseaza -></a>
         </div>
         <div class="card-2">
           <img
             src="/backgrounds/cards-images/2001.i109.035_stem_education_isometric_concept_icons-02.jpg"
             alt=""
           />
-          <h3>Plane paralele</h3>
+          <h3>Puncte, drepte, plane paralele</h3>
           <p>proprietăți, teoreme</p>
+          <a href="#" class="view-btn">Acceseaza -></a>
         </div>
         <div class="card-3">
           <img src="/backgrounds/cards-images/2358605.jpg" alt="" />
           <h3>Noțiuni de bază</h3>
           <p>puncte, drepte, plane în spațiu</p>
+          <a href="#" class="view-btn">Acceseaza -></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="formulas-section" id="formulas-section">
+      <h3 class="formulas-title">Formule</h3>
+      <div class="formulas-wrapper">
+        <div class="prisma-triunghiulara">
+          <h3>Prisma triunghiulară</h3>
+          <img src="./images-svg-corps/prisma-triunghiulara.svg" alt="" />
+          <p>\( A_b = \dfrac{a \cdot h_a}{2} \)</p>
+          <p>\( A_l = P_b \cdot H \)</p>
+          <p>\( A_t = A_l + 2 \cdot A_b \)</p>
+          <p>\( V = A_b \cdot H \)</p>
+        </div>
+
+        <div class="prisma-patrulatera">
+          <h3>Prisma patrulateră</h3>
+          <img src="./images-svg-corps/prisma-patrulatera.svg" alt="" />
+          <p>\( A_b = a \cdot b \)</p>
+          <p>\( A_l = P_b \cdot H \)</p>
+          <p>\( A_t = A_l + 2 \cdot A_b \)</p>
+          <p>\( V = A_b \cdot H \)</p>
+        </div>
+
+        <div class="cub">
+          <h3>Cub</h3>
+          <img src="./images-svg-corps/cub.svg" alt="" />
+          <p>\( A_f = a^2 \)</p>
+          <p>\( A_t = 6a^2 \)</p>
+          <p>\( d_f = a\sqrt{2} \)</p>
+          <p>\( d = a\sqrt{3} \)</p>
+          <p>\( V = a^3 \)</p>
+        </div>
+
+        <div class="paralelipiped-dreptunghic">
+          <h3>Paralelipiped dreptunghic</h3>
+          <img src="./images-svg-corps/paralelipiped.svg" alt="" />
+          <p>\( A_t = 2(ab + bc + ca) \)</p>
+          <p>\( d = \sqrt{a^2 + b^2 + c^2} \)</p>
+          <p>\( V = a \cdot b \cdot c \)</p>
+        </div>
+
+        <div class="piramida-triunghiulara">
+          <h3>Piramidă triunghiulară</h3>
+          <img src="./images-svg-corps/piramida-triunghiulara.svg" alt="" />
+          <p>\( A_b = \dfrac{a \cdot h_a}{2} \)</p>
+          <p>\( A_l = \dfrac{P_b \cdot a_p}{2} \)</p>
+          <p>\( A_t = A_l + A_b \)</p>
+          <p>\( V = \dfrac{A_b \cdot H}{3} \)</p>
+        </div>
+
+        <div class="piramida-patrulatera">
+          <h3>Piramidă patrulateră</h3>
+          <img src="./images-svg-corps/piramida-patrulatera.svg" alt="" />
+          <p>\( A_b = a^2 \)</p>
+          <p>\( A_l = \dfrac{P_b \cdot a_p}{2} \)</p>
+          <p>\( A_t = A_l + A_b \)</p>
+          <p>\( V = \dfrac{A_b \cdot H}{3} \)</p>
+        </div>
+
+        <div class="cilindru">
+          <h3>Cilindru</h3>
+          <img src="./images-svg-corps/cilindru.svg" alt="" />
+          <p>\( A_b = \pi r^2 \)</p>
+          <p>\( A_l = 2\pi r h \)</p>
+          <p>\( A_t = 2\pi r(r + h) \)</p>
+          <p>\( V = \pi r^2 h \)</p>
+        </div>
+
+        <div class="conul">
+          <h3>Con</h3>
+          <img src="./images-svg-corps/con.svg" alt="" />
+          <p>\( g = \sqrt{r^2 + h^2} \)</p>
+          <p>\( A_b = \pi r^2 \)</p>
+          <p>\( A_l = \pi r g \)</p>
+          <p>\( A_t = \pi r(r + g) \)</p>
+          <p>\( V = \dfrac{\pi r^2 h}{3} \)</p>
+        </div>
+
+        <div class="sfera">
+          <h3>Sferă</h3>
+          <img src="./images-svg-corps/sfera.svg" alt="" />
+          <p>\( A = 4\pi r^2 \)</p>
+          <p>\( V = \dfrac{4\pi r^3}{3} \)</p>
         </div>
       </div>
     </section>

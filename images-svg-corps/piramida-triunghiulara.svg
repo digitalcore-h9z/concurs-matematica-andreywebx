@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 13px; fill: #1a1a1a; font-style: italic; }
+      .height { stroke: #555; stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    </style>
+  </defs>
+  <!-- Varf -->
+  <circle cx="100" cy="20" r="2.5" fill="#1a1a1a"/>
+  <!-- Baza triunghi -->
+  <polygon points="25,160 155,160 90,120" class="solid" fill="#f0f4ff" fill-opacity="0.5"/>
+  <!-- Muchia ascunsa a bazei -->
+  <line x1="25" y1="160" x2="90" y2="120" class="hidden"/>
+  <!-- Fetele laterale vizibile -->
+  <polygon points="100,20 25,160 155,160" class="solid" fill="#e0e8ff" fill-opacity="0.5"/>
+  <line x1="100" y1="20" x2="90" y2="120" class="hidden"/>
+  <!-- Inaltimea -->
+  <line x1="100" y1="20" x2="90" y2="145" class="height"/>
+  <line x1="86" y1="145" x2="94" y2="145" style="stroke:#555;stroke-width:1;fill:none;"/>
+  <!-- Etichete -->
+  <text x="82" y="178" class="label">a</text>
+  <text x="107" y="90" class="label">H</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 210" width="220" height="210">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 13px; fill: #1a1a1a; font-style: italic; }
+    </style>
+  </defs>
+  <!-- Baza sus (patrulater in spate) -->
+  <polygon points="55,30 175,30 175,80 55,80" class="hidden" fill="none"/>
+  <!-- Fata frontala -->
+  <polygon points="20,80 140,80 140,170 20,170" class="solid" fill="#f0f4ff" fill-opacity="0.5"/>
+  <!-- Fata superioara -->
+  <polygon points="20,80 55,30 175,30 140,80" class="solid" fill="#e8eeff" fill-opacity="0.5"/>
+  <!-- Fata laterala dreapta -->
+  <polygon points="140,80 175,30 175,120 140,170" class="solid" fill="#dce4ff" fill-opacity="0.5"/>
+  <!-- Muchii ascunse -->
+  <line x1="20" y1="170" x2="55" y2="120" class="hidden"/>
+  <line x1="55" y1="120" x2="175" y2="120" class="hidden"/>
+  <line x1="55" y1="120" x2="55" y2="30" class="hidden"/>
+  <!-- Etichete -->
+  <text x="74" y="188" class="label">a</text>
+  <text x="148" y="128" class="label">b</text>
+  <text x="148" y="60" class="label">H</text>
+</svg>
