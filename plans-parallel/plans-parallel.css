@@ -168,3 +168,13 @@ footer > div {
 .media-links a:hover {
   background-color: var(--blue-dark);
 }
+
+.copyright-legal {
+  order: -1;
+}
+
+@media screen and (max-width: 700px) {
+  .copyright-legal {
+    order: 1;
+  }
+}
