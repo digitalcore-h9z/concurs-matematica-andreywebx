@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 220" width="280" height="220">
+  <defs>
+    <style>
+      .plan1 { stroke: #1a5eb8; stroke-width: 1.4; fill: #dde8ff; fill-opacity: 0.4; stroke-linecap: round; stroke-linejoin: round; }
+      .plan2 { stroke: #27ae60; stroke-width: 1.4; fill: #d5f5e3; fill-opacity: 0.4; stroke-linecap: round; stroke-linejoin: round; }
+      .intersectie { stroke: #c0392b; stroke-width: 2.2; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 12px; fill: #1a1a1a; font-style: italic; }
+      .label-red { font-family: serif; font-size: 13px; fill: #c0392b; font-weight: bold; }
+      .label-blue { font-family: serif; font-size: 12px; fill: #1a5eb8; font-style: italic; }
+      .label-green { font-family: serif; font-size: 12px; fill: #1a8a4a; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- Plan alpha - inclinat stanga -->
+  <polygon points="30,40 110,20 130,185 50,205" class="plan1"/>
+  <text x="32" y="58" class="label-blue">α</text>
+
+  <!-- Plan beta - inclinat dreapta -->
+  <polygon points="110,20 230,50 210,195 90,165" class="plan2"/>
+  <text x="212" y="65" class="label-green">β</text>
+
+  <!-- Linia de intersectie (dreapta d = alpha ∩ beta) -->
+  <line x1="110" y1="20" x2="118" y2="178" class="intersectie"/>
+  <polygon points="118,178 112,165 122,166" fill="#c0392b"/>
+  <polygon points="110,20 104,33 114,32" fill="#c0392b"/>
+  <text x="122" y="100" class="label-red">d</text>
+
+  <!-- Puncte pe linia de intersectie -->
+  <circle cx="112" cy="60" r="3" fill="#c0392b"/>
+  <circle cx="116" cy="140" r="3" fill="#c0392b"/>
+
+  <!-- Explicatie -->
+  <text x="15" y="18" style="font-family:serif;font-size:11px;fill:#333;">α ∩ β = d</text>
+  <text x="15" y="34" style="font-family:serif;font-size:11px;fill:#333;">(dreapta de intersecție)</text>
+</svg>

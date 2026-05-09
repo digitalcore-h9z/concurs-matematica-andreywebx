@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 210" width="220" height="210">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 13px; fill: #1a1a1a; font-style: italic; }
+      .dim { stroke: #555; stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    </style>
+  </defs>
+  <!-- Corp trunchi -->
+  <line x1="42" y1="170" x2="75" y2="50" class="solid"/>
+  <line x1="178" y1="170" x2="145" y2="50" class="solid"/>
+  <!-- Elipsa jos -->
+  <path d="M42,170 A68,20 0 0 0 178,170" class="hidden"/>
+  <path d="M42,170 A68,20 0 0 1 178,170" class="solid"/>
+  <!-- Elipsa sus -->
+  <path d="M75,50 A35,10 0 0 0 145,50" class="hidden"/>
+  <path d="M75,50 A35,10 0 0 1 145,50" class="solid"/>
+  <!-- Raza jos -->
+  <line x1="110" y1="170" x2="178" y2="170" class="dim"/>
+  <text x="136" y="188" class="label">R</text>
+  <!-- Raza sus -->
+  <line x1="110" y1="50" x2="145" y2="50" class="dim"/>
+  <text x="120" y="44" class="label">r</text>
+  <!-- Inaltimea -->
+  <line x1="192" y1="50" x2="192" y2="170" class="dim"/>
+  <line x1="188" y1="50" x2="196" y2="50" style="stroke:#555;stroke-width:1;fill:none;"/>
+  <line x1="188" y1="170" x2="196" y2="170" style="stroke:#555;stroke-width:1;fill:none;"/>
+  <text x="197" y="115" class="label">H</text>
+  <!-- Generatoare -->
+  <text x="44" y="108" class="label">g</text>
+</svg>

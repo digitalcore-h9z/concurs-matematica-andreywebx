@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 210" width="220" height="210">
+  <defs>
+    <style>
+      .solid { stroke: #1a1a1a; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .hidden { stroke: #1a1a1a; stroke-width: 1.2; fill: none; stroke-dasharray: 5 3; stroke-linecap: round; }
+      .label { font-family: serif; font-size: 13px; fill: #1a1a1a; font-style: italic; }
+      .height { stroke: #555; stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Baza mare jos (paralelogram perspectiva) -->
+  <polygon points="20,170 140,170 175,135 55,135" class="solid" fill="#e8eeff" fill-opacity="0.5"/>
+  <!-- Muchia ascunsa a bazei jos -->
+  <line x1="20" y1="170" x2="55" y2="135" class="hidden"/>
+
+  <!-- Baza mica sus (paralelogram perspectiva) -->
+  <polygon points="60,55 140,55 163,35 83,35" class="solid" fill="#dde8ff" fill-opacity="0.6"/>
+  <!-- Muchia ascunsa a bazei sus -->
+  <line x1="60" y1="55" x2="83" y2="35" class="hidden"/>
+
+  <!-- Fetele laterale vizibile -->
+  <!-- Fata frontala -->
+  <polygon points="20,170 140,170 140,55 60,55" class="solid" fill="#eef2ff" fill-opacity="0.4"/>
+  <!-- Fata dreapta -->
+  <polygon points="140,170 175,135 163,35 140,55" class="solid" fill="#ccd8ff" fill-opacity="0.4"/>
+  <!-- Fata stanga ascunsa -->
+  <line x1="20" y1="170" x2="60" y2="55" class="solid"/>
+  <!-- Muchia spate-stanga ascunsa -->
+  <line x1="55" y1="135" x2="83" y2="35" class="hidden"/>
+
+  <!-- Etichete -->
+  <text x="72" y="188" class="label">a</text>
+  <text x="88" y="30" class="label">a'</text>
+  <text x="150" y="115" class="label">H</text>
+</svg>
