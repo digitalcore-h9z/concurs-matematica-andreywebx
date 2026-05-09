@@ -20,7 +20,6 @@ html {
 }
 
 body {
-  padding-bottom: 1000px;
   overflow-x: hidden;
 }
 
@@ -214,6 +213,8 @@ nav {
   }
 }
 
+/* Lectii Section */
+
 .lessons-section {
   padding: 120px 0;
 }
@@ -269,7 +270,8 @@ nav {
 .title-lessons {
   text-align: center;
   color: var(--blue-main);
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
+  font-size: 21pt;
 }
 
 .view-btn {
@@ -287,16 +289,7 @@ nav {
   background-color: var(--blue-dark);
 }
 
-.formulas-section {
-  padding: 120px 0;
-}
-
-.formulas-title {
-  text-align: center;
-  color: var(--blue-main);
-  font-size: 18pt;
-  margin-bottom: 4rem;
-}
+/* Formule Section */
 
 .formulas-section {
   padding: 120px 0;
@@ -305,8 +298,12 @@ nav {
 .formulas-title {
   text-align: center;
   color: var(--blue-main);
-  font-size: 18pt;
+  font-size: 21pt;
   margin-bottom: 4rem;
+}
+
+.formulas-section {
+  padding: 120px 0;
 }
 
 .formulas-wrapper {
@@ -350,6 +347,47 @@ nav {
     margin: 0 1rem;
   }
   #home {
-     font-size: 14pt;
+    font-size: 14pt;
   }
+}
+
+/* Footer */
+
+footer {
+  background-color: var(--blue-dark);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer > div {
+  text-align: center;
+}
+
+.copyright-legal,
+.media-links {
+  display: inline-block;
+
+  margin: 2rem;
+}
+
+.copyright-legal a {
+  text-decoration: none;
+  color: var(--blue-main);
+}
+
+.media-links a {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--blue-main);
+  border: 1px solid var(--blue-main);
+  border-radius: 50px;
+  padding: 8px 8px;
+  font-size: 13pt;
+  margin: 0.5rem;
+  display: inline-block;
+  transition: ease 0.3s;
+}
+.media-links a:hover {
+  background-color: var(--blue-dark);
 }
