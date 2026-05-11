@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paralelism în Spațiu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --text: #1a1a2e;
+      --accent: #2c5f8a;
+      --accent-light: #e8f0f8;
+      --muted: #5a6072;
+      --border: #d4cfc7;
+      --warning-bg: #fff8e7;
+      --warning-border: #f0c040;
+      --check-color: #2a7a4b;
+      --cross-color: #c0392b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+      text-align: center;
+    }
+
+    /* ── HEADER ── */
+    .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      margin-bottom: 0.25em;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5em;
+    }
+
+    .story-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2.5em;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 2px solid var(--border);
+      margin: 2.5em auto;
+      width: 60%;
+    }
+
+    /* ── STORY SECTION ── */
+    .story {
+      background: white;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 28px 36px;
+      margin: 2em 0;
+      text-align: left;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .story p { margin-bottom: 0.9em; }
+    .story p:last-child { margin-bottom: 0; }
+
+    .story .quote {
+      font-weight: 600;
+      color: var(--text);
+      padding-left: 1.2em;
+      border-left: 3px solid var(--accent);
+      margin: 0.8em 0;
+    }
+
+    .story ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5em 0 0.5em 1.5em;
+    }
+
+    .story ul li::before {
+      content: "–";
+      margin-right: 0.5em;
+      color: var(--accent);
+    }
+
+    /* ── SECTION HEADINGS ── */
+    .section-num {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 0.6em;
+    }
+
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1.6em;
+    }
+
+    h3.block-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      margin: 1.6em 0 0.6em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin: 1.2em 0;
+      text-align: left;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .card.definition {
+      border-top: 4px solid var(--accent);
+    }
+
+    .card.warning {
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      border-top: 4px solid var(--warning-border);
+    }
+
+    .card.summary {
+      background: var(--accent-light);
+      border: 1px solid #b8d0e8;
+      border-top: 4px solid var(--accent);
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.4em 0;
+    }
+
+    .card ul li {
+      padding: 5px 0;
+      padding-left: 1.6em;
+      position: relative;
+    }
+
+    .card ul li.check::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--check-color);
+      font-size: 0.9em;
+    }
+
+    .card ul li.cross::before {
+      content: "✘";
+      position: absolute;
+      left: 0;
+      color: var(--cross-color);
+      font-size: 0.9em;
+    }
+
+    .card ul li.dash::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .card ul li.icon::before {
+      content: attr(data-icon);
+      position: absolute;
+      left: 0;
+    }
+
+    .propozitie {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 22px;
+      margin: 0.8em 0;
+      text-align: left;
+    }
+
+    .propozitie strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3em;
+    }
+
+    /* ── FINAL RECAPITULARE ── */
+    .recap-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 1em 0;
+    }
+
+    @media (max-width: 560px) {
+      .recap-grid { grid-template-columns: 1fr; }
+      .main-title { font-size: 2.1rem; }
+      .page { padding: 40px 20px 80px; }
+    }
+
+    .recap-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .recap-item::before {
+      content: "✔";
+      color: var(--check-color);
+      margin-right: 0.5em;
+    }
+
+    /* ── CONCLUZIE ── */
+    .concluzie {
+      background: var(--accent);
+      color: white;
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-top: 2.5em;
+      text-align: center;
+    }
+
+    .concluzie h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1em;
+      letter-spacing: 0.03em;
+    }
+
+    .concluzie p {
+      margin-bottom: 0.5em;
+      opacity: 0.92;
+      font-size: 0.97rem;
+    }
+
+    .concluzie ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.6em auto;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .concluzie ul li {
+      padding: 3px 0 3px 1.5em;
+      position: relative;
+      opacity: 0.9;
+    }
+
+    .concluzie ul li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      font-size: 0.6em;
+      top: 7px;
+      opacity: 0.7;
+    }
+
+    .concluzie .final-line {
+      margin-top: 1.2em;
+      font-weight: 600;
+      font-size: 1rem;
+      opacity: 1;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section-block {
+      margin: 3em 0;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TITLU -->
+  <div class="subtitle">Geometrie în Spațiu</div>
+  <h1 class="main-title">Paralelism în Spațiu</h1>
+  <div class="story-title">„Orașul drumurilor care nu se întâlnesc niciodată"</div>
+
+  <hr class="divider">
+
+  <!-- POVESTEA DE ÎNCEPUT -->
+  <div class="story">
+    <p>Într-un oraș futurist numit <strong>Paralelia</strong>, toate drumurile erau construite perfect. Existau poduri suspendate, șine plutitoare, coridoare aeriene și clădiri uriașe din sticlă.</p>
+    <p>Dar orașul avea o regulă foarte strictă:</p>
+    <p class="quote">„Unele drumuri nu trebuie să se întâlnească niciodată."</p>
+    <p>Arhitectul orașului, maestrul Euclid, le explica mereu copiilor:</p>
+    <p class="quote">„Dacă două drumuri merg mereu în aceeași direcție și nu se întâlnesc niciodată, atunci ele sunt paralele."</p>
+    <p>Copiii priveau: șinele trenului, marginile ferestrelor, benzile autostrăzii, cablurile suspendate — și observau că paralelismul era peste tot.</p>
+    <p>Într-o zi, un copil a întrebat:</p>
+    <p class="quote">„Dar dacă drumurile sunt în spațiu? Mai sunt paralele?"</p>
+    <p>Euclid a zâmbit și a răspuns:</p>
+    <p class="quote">„Aici începe adevărata aventură a geometriei în spațiu."</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 1. DREPTE PARALELE ÎN SPAȚIU -->
+  <div class="section-block">
+    <div class="section-num">1</div>
+    <h2 class="section-title">Drepte paralele în spațiu</h2>
+
+    <div class="card definition">
+      <h3 class="block-title">Definiție</h3>
+      <p>Două drepte sunt paralele dacă:</p>
+      <ul>
+        <li class="check">sunt coplanare</li>
+        <li class="check">nu au niciun punct comun</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 class="block-title">Observație importantă</h3>
+      <p>În spațiu, două drepte pot fi:</p>
+      <ul>
+        <li class="dash">concurente</li>
+        <li class="dash">paralele</li>
+        <li class="dash">necoplanare</li>
+      </ul>
+      <p style="margin-top:0.8em; color: var(--cross-color); font-weight: 600;">⚠ Dreptele necoplanare NU sunt paralele.</p>
+    </div>
+
+    <div class="card">
+      <h3 class="block-title">Exemple din viața reală</h3>
+      <ul>
+        <li class="dash">șinele de cale ferată</li>
+        <li class="dash">marginile unei ferestre</li>
+        <li class="dash">benzile unei autostrăzi</li>
+        <li class="dash">muchiile verticale ale unui bloc</li>
+      </ul>
+    </div>
+
+    <div class="card summary">
+      <h3 class="block-title">Ce trebuie să rețină elevii</h3>
+      <ul>
+        <li class="check">Dreptele paralele au aceeași direcție.</li>
+        <li class="check">Nu se intersectează niciodată.</li>
+        <li class="check">Trebuie să fie în același plan.</li>
+      </ul>
+    </div>
+
+    <div class="card warning">
+      <h3 class="block-title">⚠ Greșeli frecvente</h3>
+      <ul>
+        <li class="cross">Elevii confundă dreptele necoplanare cu dreptele paralele.</li>
+        <li class="check">Dreptele paralele trebuie să fie coplanare.</li>
+        <li class="cross">„Nu se intersectează" NU este suficient.</li>
+      </ul>
+    </div>
+
+    <h3 class="block-title" style="margin-top:2em;">Propoziții importante</h3>
+    <div class="propozitie">
+      <strong>Propoziția 1</strong>
+      Dacă două drepte sunt paralele cu aceeași dreaptă, atunci sunt paralele între ele.
+    </div>
+    <div class="propozitie">
+      <strong>Propoziția 2</strong>
+      Printr-un punct exterior unei drepte trece o singură paralelă la dreapta dată.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 2. DREAPTĂ PARALELĂ CU UN PLAN -->
+  <div class="section-block">
+    <div class="section-num">2</div>
+    <h2 class="section-title">Dreaptă paralelă cu un plan</h2>
+
+    <div class="card definition">
+      <h3 class="block-title">Definiție</h3>
+      <p>O dreaptă este paralelă cu un plan dacă:</p>
+      <ul>
+        <li class="check">nu are niciun punct comun cu planul</li>
+        <li class="check">este paralelă cu o dreaptă din plan</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 class="block-title">Exemple intuitive</h3>
+      <ul>
+        <li class="icon" data-icon="✈">traseul unui avion față de sol</li>
+        <li class="icon" data-icon="🏗">o grindă suspendată</li>
+        <li class="icon" data-icon="🚠">cablurile unui telescaun</li>
+      </ul>
+    </div>
+
+    <div class="card summary">
+      <h3 class="block-title">Ce trebuie să observe elevii</h3>
+      <ul>
+        <li class="check">Dreapta nu intersectează planul.</li>
+        <li class="check">Direcția ei este „aceeași" cu a unei drepte din plan.</li>
+      </ul>
+    </div>
+
+    <div class="card warning">
+      <h3 class="block-title">⚠ Greșeli frecvente</h3>
+      <ul>
+        <li class="cross">Elevii confundă „paralelă cu planul" cu „inclusă în plan".</li>
+        <li class="check">O dreaptă inclusă în plan NU este paralelă cu planul.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 3. PLANE PARALELE -->
+  <div class="section-block">
+    <div class="section-num">3</div>
+    <h2 class="section-title">Plane paralele</h2>
+
+    <div class="card definition">
+      <h3 class="block-title">Definiție</h3>
+      <p>Două plane sunt paralele dacă nu au niciun punct comun.</p>
+    </div>
+
+    <div class="card">
+      <h3 class="block-title">Exemple din viața reală</h3>
+      <ul>
+        <li class="dash">podeaua și tavanul unei camere</li>
+        <li class="dash">coperțile unei cărți închise</li>
+        <li class="dash">rafturile unei biblioteci</li>
+      </ul>
+    </div>
+
+    <div class="card summary">
+      <h3 class="block-title">Proprietăți importante</h3>
+      <ul>
+        <li class="check">Dacă două plane sunt paralele, orice dreaptă dintr-un plan este paralelă cu celălalt plan.</li>
+        <li class="check">Distanța dintre două plane paralele este constantă.</li>
+      </ul>
+    </div>
+
+    <div class="card warning">
+      <h3 class="block-title">⚠ Greșeli frecvente</h3>
+      <ul>
+        <li class="cross">Elevii cred că două plane „aproape paralele" sunt paralele.</li>
+        <li class="check">Planele paralele nu se întâlnesc niciodată.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 4. PROPRIETĂȚI ȘI APLICAȚII -->
+  <div class="section-block">
+    <div class="section-num">4</div>
+    <h2 class="section-title">Proprietăți și aplicații</h2>
+
+    <div class="card definition">
+      <h3 class="block-title">Teoremă importantă</h3>
+      <p>Dacă două plane paralele sunt intersectate de un al treilea plan, dreptele de intersecție sunt paralele.</p>
+    </div>
+
+    <div class="card">
+      <h3 class="block-title">Exemple intuitive</h3>
+      <ul>
+        <li class="dash">tuneluri</li>
+        <li class="dash">etaje ale unei clădiri</li>
+        <li class="dash">șine suspendate</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- RECAPITULARE -->
+  <div class="section-block">
+    <h2 class="section-title">Recapitulare finală</h2>
+    <p style="margin-bottom: 1.2em; color: var(--muted);">Ce trebuie să știe elevii după capitol:</p>
+    <div class="recap-grid">
+      <div class="recap-item">să identifice drepte paralele</div>
+      <div class="recap-item">să distingă dreptele necoplanare</div>
+      <div class="recap-item">să recunoască o dreaptă paralelă cu un plan</div>
+      <div class="recap-item">să identifice plane paralele</div>
+      <div class="recap-item">să aplice proprietățile paralelismului</div>
+    </div>
+  </div>
+
+  <!-- CONCLUZIE -->
+  <div class="concluzie">
+    <h2>Concluzie</h2>
+    <p>Paralelismul este ideea de echilibru și ordine în spațiu.</p>
+    <p>El apare:</p>
+    <ul>
+      <li>în arhitectură</li>
+      <li>în construcții</li>
+      <li>în drumuri</li>
+      <li>în obiectele din jurul nostru</li>
+    </ul>
+    <p class="final-line">Fără paralelism, lumea construită ar deveni haotică.</p>
+  </div>
+
+</div>
+</body>
+</html>

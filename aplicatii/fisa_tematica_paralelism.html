@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fișă Tematică – Paralelism</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #FFD23F;
+      --blue:   #2EC4B6;
+      --purple: #7B5EA7;
+      --coral:  #FF6B6B;
+      --green:  #3BB273;
+      --bg:     #F5F0E8;
+      --text:   #1A1A2E;
+      --card-bg:#FFFFFF;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      font-family: 'Nunito', sans-serif;
+      color: var(--text);
+      padding: 40px 20px 60px;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ── Section ── */
+    .section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.07);
+      border-top: 6px solid var(--blue);
+      text-align: center;
+    }
+
+    .section:nth-child(2) { border-top-color: var(--purple); }
+    .section:nth-child(3) { border-top-color: var(--coral);  }
+
+    /* ── Section header ── */
+    .section-type {
+      font-family: 'Baloo 2', cursive;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+    .section:nth-child(2) .section-type { color: var(--purple); }
+    .section:nth-child(3) .section-type { color: var(--coral);  }
+
+    .section-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    /* ── Exercise card ── */
+    .exercise {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 14px;
+      text-align: left;
+    }
+    .exercise:last-child { margin-bottom: 0; }
+
+    .exercise-label {
+      font-family: 'Baloo 2', cursive;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+    .section:nth-child(2) .exercise-label { color: var(--purple); }
+    .section:nth-child(3) .exercise-label { color: var(--coral);  }
+
+    .exercise p {
+      font-size: 1rem;
+      line-height: 1.65;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── Answer line ── */
+    .answer-line {
+      margin-top: 14px;
+      border-bottom: 2px dashed #C9C3B8;
+      height: 2px;
+    }
+    .answer-line + .answer-line { margin-top: 8px; }
+
+    /* responsive */
+    @media (max-width: 480px) {
+      .section { padding: 24px 20px; }
+      .section-title { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Section 1 -->
+  <div class="section">
+    <div class="section-type">Fișă tematică</div>
+    <div class="section-title">SpongeBob, Scooby-Doo și drumurile submarine</div>
+
+    <div class="exercise">
+      <div class="exercise-label">Exercițiul 1</div>
+      <p>SpongeBob observă două drumuri submarine care merg mereu în aceeași direcție și nu se întâlnesc. Cum se numesc aceste drepte?</p>
+      <div class="answer-line"></div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-label">Exercițiul 2</div>
+      <p>Patrick desenează două drepte care nu se întâlnesc, dar sunt în plane diferite. Sunt ele paralele?</p>
+      <div class="answer-line"></div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-label">Exercițiul 3</div>
+      <p>Scooby observă un cablu suspendat deasupra unui drum. Cablul nu atinge drumul și are aceeași direcție cu marginile acestuia. Ce poziție are cablul față de planul drumului?</p>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <div class="section-type">Fișă tematică</div>
+    <div class="section-title">Batman și clădirile Gothamului</div>
+
+    <div class="exercise">
+      <div class="exercise-label">Exercițiul 1</div>
+      <p>Batman observă podeaua și tavanul unei clădiri. Ce relație există între cele două plane?</p>
+      <div class="answer-line"></div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-label">Exercițiul 2</div>
+      <p>Două platforme suspendate nu se intersectează niciodată. Cum se numesc planele lor?</p>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <div class="section-type">Aventură tematică</div>
+    <div class="section-title">Țestoasele Ninja și liniile metroului</div>
+
+    <div class="exercise">
+      <div class="exercise-label">Problemă</div>
+      <p>Leonardo observă două șine suspendate aflate la etaje diferite. Șinele nu se intersectează și au aceeași direcție. Ce poziție au?</p>
+      <div class="answer-line"></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

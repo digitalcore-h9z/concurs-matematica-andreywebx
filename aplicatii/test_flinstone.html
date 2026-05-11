@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test – Familia Flintstone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --orange: #e8620a;
+      --yellow: #f5c842;
+      --brown: #7a3e0b;
+      --cream: #fdf6ec;
+      --stone: #d9cbb8;
+      --text: #2e1a0e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--cream);
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(232,98,10,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(245,200,66,0.12) 0%, transparent 50%);
+      font-family: 'Nunito', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 16px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    header .emoji-row {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      letter-spacing: 6px;
+    }
+
+    header h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      color: var(--orange);
+      text-shadow: 2px 3px 0 var(--brown);
+      line-height: 1.2;
+    }
+
+    header .subtitle {
+      margin-top: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--brown);
+      opacity: 0.75;
+      letter-spacing: 0.5px;
+    }
+
+    .problems {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .card {
+      background: #fff;
+      border: 2.5px solid var(--stone);
+      border-radius: 18px;
+      padding: 28px 32px;
+      box-shadow: 4px 5px 0 var(--stone);
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 4px 8px 0 var(--stone);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Fredoka One', cursive;
+      font-size: 0.85rem;
+      padding: 3px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .card-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.15rem;
+      color: var(--brown);
+    }
+
+    .card p {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .card p span.key {
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .card .question {
+      margin-top: 12px;
+      background: var(--cream);
+      border-left: 4px solid var(--yellow);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--brown);
+    }
+
+    .answer-box {
+      margin-top: 18px;
+      border: 2px dashed var(--stone);
+      border-radius: 10px;
+      height: 44px;
+    }
+
+    footer {
+      margin-top: 52px;
+      text-align: center;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1rem;
+      color: var(--orange);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="emoji-row">🦕 🪨 🦴 🏠 🪨</div>
+    <h1>Familia Flintstone<br>descoperă distanțele în spațiu</h1>
+    <p class="subtitle">Test de matematică</p>
+  </header>
+
+  <div class="problems">
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge">Problema 1</span>
+        <span class="card-title">Casa lui Fred</span>
+      </div>
+      <p>
+        Fred stă pe acoperișul casei sale.
+        Acoperișul este la <span class="key">9 m</span> deasupra solului (planul bazei).
+      </p>
+      <div class="question">Determinați distanța perpendiculară de la Fred la planul solului.</div>
+      <div class="answer-box"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge">Problema 2</span>
+        <span class="card-title">Dino coborând pe rampă</span>
+      </div>
+      <p>
+        Dino coboară pe o rampă oblică.
+        Lungimea rampei este <span class="key">15 m</span>,
+        iar proiecția acesteia pe sol este <span class="key">12 m</span>.
+      </p>
+      <div class="question">Determinați distanța verticală de la Dino la sol.</div>
+      <div class="answer-box"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge">Problema 3</span>
+        <span class="card-title">Mașina familiei Flintstone</span>
+      </div>
+      <p>
+        Mașina este pe o pantă perpendiculară pe sol.
+        Lungimea pantei este <span class="key">10 m</span>.
+      </p>
+      <div class="question">Determină cât coboară vertical mașina până la sol.</div>
+      <div class="answer-box"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge">Problema 4</span>
+        <span class="card-title">Jetonul de piatră</span>
+      </div>
+      <p>
+        Fred aruncă un jeton oblic de la fereastra casei sale,
+        la <span class="key">6 m</span> deasupra solului,
+        iar proiecția pe sol este <span class="key">8 m</span>.
+      </p>
+      <div class="question">Calculați distanța reală a jetonului față de sol.</div>
+      <div class="answer-box"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="badge">Problema 5</span>
+        <span class="card-title">Casa lui Barney</span>
+      </div>
+      <p>
+        Casa lui Barney are baza pătrată de <span class="key">6 m</span>
+        și înălțimea <span class="key">10 m</span>.
+      </p>
+      <div class="question">Determinați distanța de la vârful casei la planul bazei (planul solului).</div>
+      <div class="answer-box"></div>
+    </div>
+
+  </div>
+
+  <footer>🪨 Yabba Dabba Doo! 🪨</footer>
+
+</body>
+</html>
