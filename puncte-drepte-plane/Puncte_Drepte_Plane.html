@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puncte, Drepte, Plane</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --text: #1a1714;
+      --accent: #2d5a8e;
+      --accent-light: #e8f0f9;
+      --muted: #6b6460;
+      --border: #d9d4cc;
+      --story-bg: #f0ede8;
+      --green: #2e6b4f;
+      --red: #8b2020;
+      --card: #fff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .page {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* ── STORY SECTION ── */
+    .story {
+      background: var(--story-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .story-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .story-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+    }
+
+    .story p {
+      margin-bottom: 0.85rem;
+      color: #2c2824;
+    }
+
+    .story .speech {
+      background: var(--card);
+      border-radius: 6px;
+      padding: 0.75rem 1.2rem;
+      margin: 1rem 0;
+      border-left: 3px solid var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .story ul {
+      list-style: none;
+      padding-left: 0.5rem;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .story ul li::before {
+      content: "◆ ";
+      color: var(--accent);
+      font-size: 0.65em;
+      vertical-align: middle;
+    }
+
+    .character {
+      display: inline-block;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── MAIN HEADINGS ── */
+    h1.main-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .subtitle-line {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2c4a70;
+      margin: 1.8rem 0 0.6rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 1.4rem 0 0.5rem;
+    }
+
+    /* ── NUMBERED SECTION HEADERS ── */
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .numbered-section {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0 0.8rem;
+    }
+
+    .numbered-section h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    /* ── THEOREM BOX ── */
+    .theorem {
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.1rem 1.5rem;
+      margin: 1rem 0;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1.05rem;
+    }
+
+    .theorem::before {
+      content: "📌 ";
+    }
+
+    /* ── WARNING/NOTE BOX ── */
+    .note {
+      background: #fff8e8;
+      border-left: 4px solid #c8960a;
+      border-radius: 0 6px 6px 0;
+      padding: 0.9rem 1.3rem;
+      margin: 1rem 0;
+      color: #5a4200;
+    }
+
+    /* ── GRAPHIC REPRESENTATION ── */
+    .graphic-repr {
+      font-family: 'Courier New', monospace;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin: 1rem auto;
+      max-width: 320px;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    /* ── LISTS ── */
+    ul.content-list {
+      padding-left: 0;
+      list-style: none;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    ul.content-list li {
+      padding: 0.35rem 0 0.35rem 1.8rem;
+      position: relative;
+    }
+
+    ul.content-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0.5rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ── CHECK/CROSS LISTS ── */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .checklist li {
+      padding: 0.3rem 0;
+    }
+
+    .ok { color: var(--green); font-weight: 600; }
+    .err { color: var(--red); font-weight: 600; }
+
+    /* ── EMOJI LISTS ── */
+    .emoji-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .emoji-list li {
+      padding: 0.4rem 0;
+    }
+
+    /* ── MISTAKES SECTION ── */
+    .mistakes {
+      background: #fef5f5;
+      border: 1px solid #e5c0c0;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.2rem 0;
+    }
+
+    .mistakes h4 {
+      color: var(--red);
+    }
+
+    /* ── SUMMARY SECTION ── */
+    .summary {
+      background: var(--accent-light);
+      border-radius: 10px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .summary h4 {
+      color: var(--accent);
+    }
+
+    /* ── TABLE ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.97rem;
+    }
+
+    thead tr {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    thead th {
+      padding: 0.75rem 1.1rem;
+      text-align: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--accent-light);
+    }
+
+    tbody td {
+      padding: 0.7rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── CONCLUSION ── */
+    .conclusion {
+      background: linear-gradient(135deg, #1e3d5e 0%, #2d5a8e 100%);
+      color: #e8f0f9;
+      border-radius: 12px;
+      padding: 2rem 2.2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .conclusion h2 {
+      color: #fff;
+      border-bottom-color: rgba(255,255,255,0.3);
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+
+    .conclusion p {
+      font-size: 1.05rem;
+      margin: 0.6rem 0;
+      opacity: 0.92;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid var(--border);
+      margin: 2.5rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- STORY -->
+  <div class="story">
+    <div class="story-title">Poveste de început</div>
+    <div class="story-subtitle">„Orașul fără margini"</div>
+
+    <p>Într-o lume imaginară exista un oraș ciudat, numit Geometria.</p>
+    <p>În acel oraș nu existau case obișnuite, ci:</p>
+    <ul>
+      <li>puncte luminoase,</li>
+      <li>drumuri infinite,</li>
+      <li>și suprafețe care păreau că nu se termină niciodată.</li>
+    </ul>
+
+    <p>În centrul orașului trăia un bătrân arhitect numit Euclid. Într-o zi, el i-a chemat pe copii și le-a spus:</p>
+
+    <div class="speech">— „Dacă vreți să înțelegeți lumea spațiului, trebuie mai întâi să cunoașteți cele trei personaje fundamentale."</div>
+
+    <p>Și atunci au apărut:</p>
+    <p><span class="character">Punctul</span> — mic, fără dimensiune, dar capabil să arate exact un loc.</p>
+    <p><span class="character">Dreapta</span> — un drum infinit, fără început și fără sfârșit.</p>
+    <p><span class="character">Planul</span> — o suprafață perfect netedă, întinsă la nesfârșit.</p>
+
+    <p>Copiii au început să observe orașul:</p>
+    <ul>
+      <li>stelele erau puncte,</li>
+      <li>firele electrice erau drepte,</li>
+      <li>podeaua și pereții erau plane.</li>
+    </ul>
+
+    <p>Dar arhitectul le-a spus zâmbind:</p>
+    <div class="speech">— „Adevărata magie începe atunci când ele încep să se întâlnească."</div>
+    <p>Și astfel a început aventura geometriei în spațiu.</p>
+  </div>
+
+  <!-- TITLE -->
+  <h1 class="main-title">Puncte, Drepte și Plane</h1>
+  <div class="subtitle-line">Noțiuni fundamentale de geometrie în spațiu</div>
+
+  <p>În geometrie există câteva noțiuni fundamentale care nu se definesc prin alte noțiuni mai simple. Acestea se numesc <strong>noțiuni primitive</strong>: punctul, dreapta și planul.</p>
+
+  <!-- 1. PUNCTUL -->
+  <div class="numbered-section">
+    <span class="section-number">1</span>
+    <h3>Punctul</h3>
+  </div>
+  <p>Punctul indică un loc precis în spațiu. El nu are dimensiuni și se notează cu litere mari.</p>
+
+  <!-- 2. DREAPTA -->
+  <div class="numbered-section">
+    <span class="section-number">2</span>
+    <h3>Dreapta</h3>
+  </div>
+  <p>Dreapta este o mulțime infinită de puncte așezate în aceeași direcție. Nu are început și nu are sfârșit.</p>
+
+  <!-- 3. PLANUL -->
+  <div class="numbered-section">
+    <span class="section-number">3</span>
+    <h3>Planul</h3>
+  </div>
+  <p>Planul este o suprafață netedă care se întinde la infinit în toate direcțiile.</p>
+
+  <hr>
+
+  <!-- POZITII RELATIVE -->
+  <h2>Poziții relative în spațiu</h2>
+  <p>În geometria în spațiu, punctele, dreptele și planele pot avea diferite poziții unele față de altele. Aceste relații ne ajută să înțelegem organizarea figurilor geometrice.</p>
+
+  <div class="numbered-section">
+    <span class="section-number">1</span>
+    <h3>Poziția relativă a două puncte</h3>
+  </div>
+  <p>Două puncte distincte determină o singură dreaptă. Dacă punctele coincid, ele reprezintă același punct.</p>
+
+  <div class="numbered-section">
+    <span class="section-number">2</span>
+    <h3>Poziția unui punct față de o dreaptă</h3>
+  </div>
+  <p>Un punct poate aparține unei drepte sau poate fi exterior acesteia.</p>
+
+  <div class="numbered-section">
+    <span class="section-number">3</span>
+    <h3>Poziția unei drepte față de un plan</h3>
+  </div>
+  <p>O dreaptă poate fi inclusă în plan, paralelă cu planul sau secantă planului.</p>
+
+  <div class="numbered-section">
+    <span class="section-number">4</span>
+    <h3>Poziția relativă a două plane</h3>
+  </div>
+  <p>Două plane pot fi paralele sau secante. Dacă sunt secante, intersecția lor este o dreaptă.</p>
+
+  <hr>
+
+  <!-- DETERMINAREA -->
+  <h2>Determinarea unei drepte și a unui plan</h2>
+
+  <h3>Introducere intuitivă</h3>
+  <p>În geometrie, pentru a construi o figură corectă trebuie să știm ce elemente o determină în mod unic.</p>
+  <p>La fel ca în viața reală:</p>
+  <ul class="content-list">
+    <li>două puncte fixe determină direcția unui drum,</li>
+    <li>trei puncte fixe pot determina suprafața unei mese.</li>
+  </ul>
+  <p>În geometria în spațiu:</p>
+  <ul class="content-list">
+    <li>o dreaptă este determinată de puncte,</li>
+    <li>un plan este determinat de puncte și drepte.</li>
+  </ul>
+
+  <!-- I. DREAPTA -->
+  <h2>I. Determinarea unei drepte</h2>
+
+  <h4>Teoremă fundamentală</h4>
+  <div class="theorem">Prin două puncte distincte trece o singură dreaptă.</div>
+
+  <h4>Explicație intuitivă</h4>
+  <p>Dacă alegem două puncte diferite A și B, nu putem construi două drepte diferite care să treacă prin ambele puncte. Direcția este unică.</p>
+
+  <h4>Reprezentare grafică</h4>
+  <div class="graphic-repr">●────────────────●<br>A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B</div>
+
+  <h4>Exemple din viața reală</h4>
+  <ul class="content-list">
+    <li>două orașe determină traseul unui drum drept</li>
+    <li>doi stâlpi determină direcția unui fir electric</li>
+    <li>două puncte pe riglă determină o linie</li>
+  </ul>
+
+  <div class="summary">
+    <h4>Observații importante</h4>
+    <ul class="checklist">
+      <li><span class="ok">✔</span> Două puncte distincte → o singură dreaptă</li>
+      <li><span class="ok">✔</span> Printr-un singur punct trec infinit de multe drepte</li>
+      <li><span class="ok">✔</span> Pentru determinarea unei drepte sunt necesare exact două puncte distincte</li>
+    </ul>
+  </div>
+
+  <div class="mistakes">
+    <h4>Greșeli frecvente</h4>
+    <ul class="checklist">
+      <li><span class="err">✗</span> Elevii aleg două puncte identice → <span class="ok">punctele trebuie să fie distincte</span></li>
+      <li><span class="err">✗</span> Confundă segmentul cu dreapta → <span class="ok">segmentul este doar o parte a dreptei</span></li>
+    </ul>
+  </div>
+
+  <!-- II. PLANUL -->
+  <h2>II. Determinarea unui plan</h2>
+
+  <h3>1. Prin trei puncte necoliniare</h3>
+  <h4>Teoremă fundamentală</h4>
+  <div class="theorem">Prin trei puncte necoliniare trece un singur plan.</div>
+  <h4>Explicație intuitivă</h4>
+  <p>Imaginează-ți un trepied cu trei picioare. Trei puncte care nu sunt pe aceeași dreaptă „fixează" perfect un plan.</p>
+  <div class="note">⚠ Dacă punctele sunt coliniare, nu putem determina un plan unic. Printr-o dreaptă pot trece infinit de multe plane.</div>
+
+  <h3>2. Printr-o dreaptă și un punct exterior ei</h3>
+  <div class="theorem">O dreaptă și un punct exterior ei determină un singur plan.</div>
+  <h4>Explicație intuitivă</h4>
+  <p>O balama (dreapta) și un punct exterior fixează poziția unei suprafețe.</p>
+
+  <h3>3. Prin două drepte concurente</h3>
+  <div class="theorem">Două drepte concurente determină un singur plan.</div>
+  <h4>Explicație intuitivă</h4>
+  <p>Dacă două drepte se întâlnesc, ele „stau" în același plan.</p>
+
+  <h3>4. Prin două drepte paralele</h3>
+  <div class="theorem">Două drepte paralele determină un singur plan.</div>
+  <h4>Explicație intuitivă</h4>
+  <p>Două șine de cale ferată paralele „fixează" un plan.</p>
+
+  <!-- SCHEMA -->
+  <h3>Schema recapitulativă</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Elemente date</th>
+          <th>Figură determinată</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Două puncte distincte</td><td>O dreaptă</td></tr>
+        <tr><td>Trei puncte necoliniare</td><td>Un plan</td></tr>
+        <tr><td>O dreaptă + un punct exterior</td><td>Un plan</td></tr>
+        <tr><td>Două drepte concurente</td><td>Un plan</td></tr>
+        <tr><td>Două drepte paralele</td><td>Un plan</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Exemple din viața reală</h4>
+  <ul class="emoji-list">
+    <li>🪑 Trei picioare ale unui scaun stabilesc poziția pe podea</li>
+    <li>🚪 Balamalele unei uși determină planul ușii</li>
+    <li>🚂 Două șine paralele determină un plan</li>
+  </ul>
+
+  <div class="mistakes">
+    <h4>Greșeli frecvente ale elevilor</h4>
+    <ul class="checklist">
+      <li><span class="err">✗</span> Cred că orice trei puncte determină un plan → <span class="ok">punctele trebuie să fie necoliniare</span></li>
+      <li><span class="err">✗</span> Confundă dreptele necoplanare cu dreptele paralele → <span class="ok">dreptele necoplanare nu determină un plan</span></li>
+      <li><span class="err">✗</span> Consideră că o singură dreaptă determină un plan → <span class="ok">printr-o dreaptă trec infinit de multe plane</span></li>
+    </ul>
+  </div>
+
+  <div class="summary">
+    <h4>Ce trebuie să știe elevii după lecție</h4>
+    <ul class="checklist">
+      <li><span class="ok">✔</span> Să determine o dreaptă folosind două puncte distincte</li>
+      <li><span class="ok">✔</span> Să determine un plan în toate cazurile studiate</li>
+      <li><span class="ok">✔</span> Să recunoască situațiile imposibile</li>
+      <li><span class="ok">✔</span> Să utilizeze corect notațiile matematice</li>
+      <li><span class="ok">✔</span> Să reprezinte corect desenele geometrice</li>
+    </ul>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <h2>Concluzie</h2>
+    <p>📍 Două puncte fixează o direcție.</p>
+    <p>📏 Dreptele fixează spațiul.</p>
+    <p>🪟 Planele organizează lumea geometrică.</p>
+    <p style="margin-top:1.2rem; opacity:0.75; font-size:0.95rem;">Tot spațiul geometric se construiește pornind de la aceste relații fundamentale.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perpendicularitate în spațiu</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="perpendicularitate.css" />
+    <link rel="stylesheet" href="/navbar-shared.css" />
+  </head>
+    <div class="page-wrapper">
+      <h1>Perpendicularitate în spațiu</h1>
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <h2>1. Drepte perpendiculare — Dreaptă perpendiculară pe un plan</h2>
+
+      <p>
+        Dreapta perpendiculară pe un plan este „stâlpul" întregii geometrii în
+        spațiu. Un concept fundamental de la care pornește totul.
+      </p>
+
+      <!-- STORY -->
+      <div class="story-block">
+        <div class="story-title">
+          ⚔ Gardianul Adevărului și Pactul cu Trei Martori
+        </div>
+        <p>
+          Într-un oraș antic, pe o piață vastă — care era de fapt
+          <strong>Planul Alpha</strong> — oamenii își așezau corturile, își
+          construiau casele și ridicau stâlpi. Dar mereu apărea o problemă:
+          <strong>„Este acest stâlp drept?"</strong>,
+          <strong>„Cade într-adevăr perpendicular pe piață?"</strong>
+        </p>
+        <p>
+          Părea simplu să-l ridici, dar ochiul uman putea fi ușor păcălit. Un
+          stâlp putea părea drept, dar de fapt era ușor înclinat spre nord sau
+          spre sud.
+        </p>
+
+        <h3>Provocarea Dreptei Perpendiculare</h3>
+        <p>
+          Regele Orașului, un mare geometru, a vrut să pună capăt confuziei. A
+          dorit să ridice un <strong>Gardian al Adevărului</strong> — un stâlp
+          care să fie <strong>perfect perpendicular pe Planul Pieței</strong>.
+        </p>
+        <p>
+          A chemat toți inginerii, dar niciunul nu a reușit să demonstreze cu
+          certitudine că stâlpul lor era absolut drept.
+        </p>
+
+        <h3>Pactul cu Trei Martori</h3>
+        <p>
+          Atunci a apărut o bătrână înțeleaptă, cu ochii sclipitori. A spus:
+        </p>
+        <ul>
+          <li>
+            „Alegeți punctul unde stâlpul atinge piața —
+            <strong>punctul O</strong>."
+          </li>
+          <li>
+            „Trasați o primă linie dreaptă pe piață, care să treacă prin
+            <strong>O</strong> — dreapta <strong>d₁</strong>."
+          </li>
+          <li>
+            „Dacă stâlpul este perpendicular pe această primă linie... este
+            bine, dar nu suficient!"
+          </li>
+          <li>
+            „Trasați a doua linie dreaptă pe piață, care să treacă tot prin
+            <strong>O</strong>, dar să fie diferită de prima — dreapta
+            <strong>d₂</strong>."
+          </li>
+          <li>
+            „Dacă stâlpul este perpendicular și pe a doua linie... sunteți
+            aproape!"
+          </li>
+          <li>
+            „Și acum secretul:
+            <strong
+              >dacă stâlpul este perpendicular pe două drepte distincte din
+              plan, care trec prin piciorul său (O), atunci stâlpul este automat
+              perpendicular pe toate celelalte drepte din acel plan!</strong
+            >"
+          </li>
+        </ul>
+        <p>
+          Din acea zi, orice stâlp, orice zid, orice turn trebuia să respecte
+          acest pact. Verificau cu două șnururi și, dacă amândouă formau un
+          unghi drept cu stâlpul, atunci știau că stâlpul era
+          <strong>perpendicular pe întregul plan</strong>.
+        </p>
+      </div>
+
+      <!-- DEFINITION IN PLANE -->
+      <div class="definition-box">
+        <div class="def-label">Definiție — în plan</div>
+        <p>
+          Două drepte <span class="math">d₁</span> și
+          <span class="math">d₂</span> sunt perpendiculare dacă sunt concurente
+          și formează un unghi drept.
+        </p>
+        <span class="formula">d₁ ⊥ d₂ ⟺ ∢(d₁, d₂) = 90°</span>
+      </div>
+
+      <!-- IMPORTANT OBSERVATIONS -->
+      <div class="warning-box">
+        <div class="warn-label">⚠ ATENȚIE!</div>
+        <p>
+          În spațiu, două drepte pot fi: <strong>concurente</strong>,
+          <strong>paralele</strong> sau <strong>necoplanare (strâmbe)</strong>.
+        </p>
+        <p>
+          <strong>Două drepte necoplanare NU pot fi perpendiculare.</strong>
+        </p>
+      </div>
+
+      <div class="obs-box">
+        <strong>Exemplu:</strong> Muchiile unei cărți la colț sunt
+        perpendiculare.
+      </div>
+
+      <!-- IMPORTANT TABLE -->
+      <table>
+        <thead>
+          <tr>
+            <th>Când spunem că o dreaptă este perpendiculară pe un plan?</th>
+            <th>Regula importantă (de știut pentru teste)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              O dreaptă este perpendiculară pe un plan dacă „intră drept în el",
+              ca un stâlp fixat în pământ.
+            </td>
+            <td>
+              O dreaptă este perpendiculară pe un plan dacă este perpendiculară
+              pe
+              <strong>două drepte diferite din plan, care se întâlnesc</strong>.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Exemplu:</strong> Un stâlp vertical este perpendicular pe
+              sol.
+            </td>
+            <td>
+              Pe scurt:
+              <strong
+                >„Perpendiculară pe două drepte → perpendiculară pe
+                plan"</strong
+              >.
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong>Obs. imp. 1</strong> — Dacă o dreaptă este perpendiculară
+              pe un plan, atunci ea „înțeapă" planul.<br />
+              <strong>Obs. imp. 2</strong> — Dacă o dreaptă este perpendiculară
+              pe un plan, atunci orice dreaptă paralelă cu dreapta dată este
+              perpendiculară pe plan.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="definition-box" style="margin: 0">
+                <div class="def-label">Definiție</div>
+                <p>
+                  O dreaptă <span class="math">d</span> este perpendiculară pe
+                  un plan <span class="math">α</span> dacă este perpendiculară
+                  pe orice dreaptă inclusă în planul α.
+                </p>
+                <span class="formula">d ⊥ α</span>
+              </div>
+            </td>
+            <td>
+              <div class="error-box" style="margin: 0">
+                <div class="err-label">Greșeli frecvente ❌</div>
+                <ul>
+                  <li>
+                    Două drepte care nu se întâlnesc NU pot fi perpendiculare.
+                  </li>
+                  <li>
+                    Dacă o dreaptă este perpendiculară doar pe o singură dreaptă
+                    din plan, nu e suficient.
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- PROPOSITIONS -->
+      <div class="theorem-box">
+        <div class="thm-label">Propoziția 1</div>
+        <p>
+          Dacă o dreaptă este perpendiculară pe două drepte concurente situate
+          într-un plan, atunci ea este perpendiculară pe plan.
+        </p>
+        <span class="formula"
+          >d ⊥ a, d ⊥ b, a ∩ b ≠ ∅, a ⊂ α, b ⊂ α → d ⊥ α</span
+        >
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Propoziție</th>
+            <th>Ce înseamnă?</th>
+            <th>Intuiție</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Propoziția 2.</strong> Printr-un punct din spațiu, există
+              o singură dreaptă perpendiculară pe un plan dat.
+            </td>
+            <td>
+              Dacă ai un plan (P) și un punct M, poți duce o singură dreaptă din
+              M care să fie perpendiculară pe plan.
+            </td>
+            <td>
+              Direcția perpendiculară pe plan este una singură — nu pot exista
+              două direcții diferite care să fie ambele „verticale" pe același
+              plan.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Propoziția 3.</strong> Două drepte perpendiculare pe
+              același plan sunt drepte paralele.
+            </td>
+            <td>Dacă d₁ ⊥ (P) și d₂ ⊥ (P), atunci d₁ ∥ d₂.</td>
+            <td>
+              Gândește-te la podea și la două bețe puse perfect vertical pe ea.
+              Toate „verticalele" pe același plan au aceeași direcție, deci sunt
+              paralele.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Propoziția 4.</strong> Printr-un punct M din spațiu,
+              există un singur plan perpendicular pe o dreaptă dată d.
+            </td>
+            <td>
+              Dacă ai o dreaptă d și un punct M, poți construi un singur plan
+              care trece prin M și este perpendicular pe d.
+            </td>
+            <td>
+              Planul perpendicular pe d conține toate dreptele prin M care sunt
+              perpendiculare pe d.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Propoziția 5.</strong> Două plane distincte,
+              perpendiculare pe aceeași dreaptă, sunt paralele.
+            </td>
+            <td>Dacă (P₁) ⊥ d și (P₂) ⊥ d, atunci (P₁) ∥ (P₂).</td>
+            <td>
+              Dacă dreapta d este „verticală", planele perpendiculare pe ea sunt
+              toate „orizontale" — deci paralele.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- APPLICATIONS -->
+      <div class="app-box">
+        <div class="app-label">Aplicația 1</div>
+        <p>
+          Fie <strong>ABCA'B'C'</strong>, o prismă triunghiulară dreaptă.
+          <strong>ABB'A'</strong> și <strong>ACC'A'</strong> sunt dreptunghiuri,
+          deci <strong>AA'</strong> este perpendiculară pe dreptele concurente
+          <strong>AB</strong> și <strong>AC</strong>. De aici rezultă că
+          <strong>AA' ⊥ (ABC)</strong>.
+        </p>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">Aplicația 2</div>
+        <p>
+          Considerăm un paralelipiped dreptunghic
+          <strong>ABCDA'B'C'D'</strong> cu dimensiunile
+          <span class="math">a = AB</span>, <span class="math">b = BC</span> și
+          <span class="math">c = AA'</span>. Ne propunem să calculăm lungimea
+          <span class="math">d</span> a diagonalei <strong>AC'</strong>.
+        </p>
+        <p>
+          <strong>CC' ⊥ (ABCD)</strong> → <strong>CC' ⊥ AC</strong> și se aplică
+          Teorema lui Pitagora în △AC'C:
+        </p>
+        <span class="formula">d² = a² + b² + c²</span>
+      </div>
+
+      <div class="obs-box">
+        <strong>Obs. imp. 3</strong> — Muchiile laterale ale unei prisme drepte
+        sunt perpendiculare pe planul bazei.
+      </div>
+      <div class="obs-box">
+        <strong>Obs. imp. 4</strong> — Diagonala paralelipipedului dreptunghic
+        de dimensiuni a, b, c este:
+        <span class="formula">d² = a² + b² + c²</span>
+      </div>
+
+      <!-- PLAN / SPATIU TABLE -->
+      <table>
+        <thead>
+          <tr>
+            <th>În plan</th>
+            <th>În spațiu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Se consideră punctul M și dreapta d. Construim din M dreapta d₁
+              perpendiculară pe d, care este unică.
+            </td>
+            <td>
+              Se consideră punctul M și planul α. Construim din M dreapta d₁
+              perpendiculară pe α, care este unică.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Notăm {O} = d₁ ∩ d. Uzual, O se numește
+              <strong>piciorul perpendicularei</strong> din M pe dreapta d.
+            </td>
+            <td>
+              Notăm {O} = d₁ ∩ α. Uzual, O se numește
+              <strong>piciorul perpendicularei</strong> din M pe planul α.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Definiția 1.</strong> Lungimea segmentului MO este
+              <strong>distanța de la punctul M la dreapta d</strong>; se notează
+              d(M, d).
+            </td>
+            <td>
+              <strong>Definiția 2.</strong> Lungimea segmentului MO este
+              <strong>distanța de la punctul M la planul α</strong>; se notează
+              d(M, α).
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- APPLICATIONS 3–8 -->
+      <div class="app-box">
+        <div class="app-label">Aplicația 3</div>
+        <p>
+          Orice dreaptă paralelă cu o dreaptă perpendiculară pe un plan este
+          perpendiculară pe acel plan.
+        </p>
+        <span class="formula">d₁ ∥ d₂ și d₂ ⊥ α → d₁ ⊥ α</span>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">Aplicația 4 — Cubul ABCDA'B'C'D'</div>
+        <p>Arătați că muchia AA' este perpendiculară pe planul (ABCD).</p>
+        <ul>
+          <li>
+            Într-un cub, muchiile laterale sunt verticale. AA' este muchie
+            laterală.
+          </li>
+          <li>În planul (ABCD) avem dreptele AB și AD.</li>
+          <li>În cub: AA' ⊥ AB și AA' ⊥ AD.</li>
+          <li>AB ∩ AD = {A} — sunt concurente.</li>
+          <li>
+            <strong>Concluzie:</strong> O dreaptă perpendiculară pe două drepte
+            concurente din plan este perpendiculară pe plan →
+            <strong>AA' ⊥ (ABCD)</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">Aplicația 5 — Stâlpul de 4 m</div>
+        <p>
+          Un stâlp de 4 m este fixat vertical pe sol. Care este distanța de la
+          vârful stâlpului la sol?
+        </p>
+        <ul>
+          <li>Stâlpul este perpendicular pe sol.</li>
+          <li>
+            Distanța de la un punct la un plan este lungimea perpendicularei.
+          </li>
+          <li>Perpendiculara este chiar stâlpul.</li>
+          <li>
+            <strong>Concluzie:</strong> Distanța este <strong>4 m</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">Aplicația 6 — Cubul: BB' ⊥ AD</div>
+        <ul>
+          <li>
+            BB' este muchie laterală (verticală); AD este muchie a bazei
+            (orizontală).
+          </li>
+          <li>
+            În cub, muchiile laterale sunt perpendiculare pe planul bazei: BB' ⊥
+            (ABCD).
+          </li>
+          <li>
+            O dreaptă perpendiculară pe plan este perpendiculară pe orice
+            dreaptă din plan.
+          </li>
+          <li>AD ⊂ (ABCD).</li>
+          <li><strong>Concluzie:</strong> <strong>BB' ⊥ AD</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">
+          Aplicația 7 — Distanța de la punctul A la plan
+        </div>
+        <p>
+          Dintr-un punct A situat deasupra planului se duce perpendiculara AH pe
+          plan, cu AH = 6 cm. Care este distanța de la A la plan?
+        </p>
+        <ul>
+          <li>
+            Distanța de la un punct la un plan este perpendiculara — AH este
+            perpendiculară pe plan.
+          </li>
+          <li>Lungimea ei este 6 cm.</li>
+          <li>
+            <strong>Concluzie:</strong> Distanța este <strong>6 cm</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">
+          Aplicația 8 — Prisma dreaptă ABCA'B'C': AA' ⊥ BC
+        </div>
+        <ul>
+          <li>
+            Într-o prismă dreaptă, muchiile laterale sunt perpendiculare pe
+            planul bazei: AA' ⊥ (ABC).
+          </li>
+          <li>BC ⊂ (ABC).</li>
+          <li>
+            O dreaptă perpendiculară pe plan este perpendiculară pe orice
+            dreaptă din plan.
+          </li>
+          <li><strong>Concluzie:</strong> <strong>AA' ⊥ BC</strong>.</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <h2>2. Distanța de la un punct la un plan</h2>
+
+      <div class="story-block">
+        <div class="story-title">
+          🏔 Legenda Coloanei de Aur și Secretul Înălțimii
+        </div>
+        <p>
+          În centrul regatului Geometriei se afla un munte magic numit
+          <strong>Vârful V</strong>. Locuitorii din vale, care trăiau în
+          <strong>Planul Bazei</strong>, doreau să știe cât de sus se află de
+          fapt acest vârf.
+        </p>
+        <p>
+          <strong>Regele Volum</strong> a dat un decret: „Cine va măsura
+          distanța dintre Vârf și Bază va primi cheia tuturor formulelor!" Mulți
+          au încercat să urce pe versanți, dar Regele spunea mereu: „Nu, aceea
+          este drumul parcurs, nu înălțimea mea!"
+        </p>
+        <p>
+          Atunci a apărut un personaj numit <strong>垂直 (Chuízhí)</strong> —
+          Spiritul Perpendicularei. El a urcat în vârf și a dat drumul unei
+          sfori magice, de care atârna o greutate. Sfoara a căzut direct, pe cel
+          mai scurt drum posibil. În punctul în care sfoara a atins pământul s-a
+          format un simbol sacru: <strong>Unghiul Drept (90°)</strong>.
+        </p>
+        <p>
+          „Aceasta este Înălțimea! Nu e nici muchie, nici apotemă. Este drumul
+          luminii care cade vertical!"
+        </p>
+      </div>
+
+      <div class="obs-box">
+        <strong>Secretul de reținut:</strong> Ori de câte ori cauți înălțimea
+        într-o problemă, caută <strong>perpendiculara</strong>. Ea este „sfoara
+        cu plumb" care cade din cel mai înalt punct direct pe bază. Dacă
+        înălțimea cade în afara bazei (la corpurile oblice), ea tot distanța de
+        la vârf la planul bazei rămâne.
+      </div>
+
+      <div class="definition-box">
+        <div class="def-label">Definiție</div>
+        <ul>
+          <li>
+            Dacă un punct A este situat <strong>în</strong> planul α, distanța
+            de la A la α este <strong>zero</strong>.
+          </li>
+          <li>
+            Dacă punctul A este <strong>exterior</strong> planului α, distanța
+            de la A la α este <span class="math">AA'</span>, unde
+            <span class="math">AA' ⊥ α</span>.
+          </li>
+        </ul>
+        <span class="formula">d(A, α) = AA'</span>
+      </div>
+
+      <div class="theorem-box">
+        <div class="thm-label">Teoremă</div>
+        <p>
+          Perpendiculara dusă dintr-un punct exterior unui plan pe acel plan
+          este unică.
+        </p>
+      </div>
+
+      <!-- HEIGHTS TABLE -->
+      <table>
+        <thead>
+          <tr>
+            <th>Corp geometric</th>
+            <th>Înălțimea — descriere și formule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Prisma dreaptă</strong></td>
+            <td>
+              Înălțimea este egală cu lungimea muchiei laterale. Formula
+              volumului: <span class="formula">V = A<sub>b</sub> · h</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Prisma oblică</strong></td>
+            <td>
+              Înălțimea este mai mică decât lungimea muchiei laterale
+              (perpendiculara pică în afara bazei).
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Piramida regulată</strong></td>
+            <td>
+              Înălțimea este segmentul perpendicular din vârf pe planul bazei,
+              coborând în centrul cercului circumscris bazei. Formula:
+              <span class="formula">V = A<sub>b</sub> · h / 3</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Trunchiul de piramidă</strong></td>
+            <td>
+              Înălțimea unește centrele celor două baze și este perpendiculară
+              pe planele acestora.
+              <span class="formula">V = h/3 · (A + a + √(A·a))</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Cilindrul circular drept</strong></td>
+            <td>
+              Înălțimea este egală cu generatoarea (h = g).
+              <span class="formula">V = π·r²·g</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Conul circular drept</strong></td>
+            <td>
+              Înălțimea este axa de simetrie, unind vârful V cu centrul bazei O.
+              <span class="formula">h² + r² = g² | V = π·r²·h / 3</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Trunchiul de con</strong></td>
+            <td>
+              Înălțimea unește centrele celor două baze.
+              <span class="formula">V = π·h/3 · (R² + r² + R·r)</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- APPLICATION 9–10 -->
+      <div class="app-box">
+        <div class="app-label">Aplicația 9</div>
+        <p>
+          Dreapta care unește vârful piramidei patrulatere regulate cu centrul
+          bazei sale este perpendiculară pe planul bazei.
+        </p>
+      </div>
+      <div class="app-box">
+        <div class="app-label">Aplicația 10</div>
+        <p>
+          Dreapta determinată de vârful piramidei triunghiulare regulate și
+          centrul bazei este perpendiculară pe planul bazei.
+        </p>
+      </div>
+
+      <div class="obs-box">
+        <strong>Obs. imp. 5</strong> — Pentru orice piramidă regulată, dreapta
+        care unește vârful piramidei cu centrul cercului circumscris bazei este
+        perpendiculară pe planul bazei.
+      </div>
+      <div class="obs-box">
+        <strong>Obs. imp. 6</strong> — Lungimea segmentului determinat de vârful
+        piramidei regulate și centrul bazei sale reprezintă
+        <strong>distanța</strong> de la vârf la planul bazei.
+      </div>
+      <div class="obs-box">
+        <strong>Obs. imp. 7</strong> — Când este vorba despre o singură
+        perpendicularitate, planul se poziționează orizontal, iar dreapta
+        perpendiculară pe planul orizontal.
+      </div>
+      <div class="obs-box">
+        <strong>Obs. imp. 8</strong> — În piramida triunghiulară (tetraedru),
+        oricare dintre fețe poate fi considerată bază, deci putem vorbi de patru
+        înălțimi.
+      </div>
+      <div class="obs-box">
+        <strong>Obs. imp. 9</strong> — Înălțimea conului circular drept coincide
+        cu lungimea segmentului determinat de vârful său și centrul bazei.
+      </div>
+      <div class="app-box">
+        <div class="app-label">Aplicația 10 — Conul circular drept</div>
+        <p>
+          Axa de simetrie a conului circular drept este perpendiculară pe planul
+          bazei.
+        </p>
+      </div>
+
+      <hr />
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <h2>3. Proiecții ortogonale în spațiu</h2>
+
+      <div class="story-block">
+        <div class="story-title">🎭 Legenda Spectacolului de Umbre</div>
+        <p>
+          În marele teatru al Geometriei, există un personaj fascinant numit
+          <strong>Punctul Călător</strong>. Lui îi place să plutească deasupra
+          unei scene uriașe, numită <strong>Planul Alpha</strong>.
+        </p>
+        <p>
+          <strong>Proiecția unui Punct.</strong> Într-o seară, regizorul a
+          aprins un reflector uriaș, situat exact deasupra Punctului Călător.
+          Lumina bătea perfect vertical (perpendicular) pe scenă. Urma lăsată de
+          Punct pe podeaua scenei a fost numită
+          <strong>Proiecția sa P'</strong>. Indiferent cât de sus sau de jos
+          zboară Punctul, umbra lui stă mereu cuminte sub el.
+        </p>
+        <p>
+          <strong>Proiecția unui Segment.</strong> Un acrobat a ridicat un
+          baston — segmentul AB — deasupra scenei. Dacă bastonul era paralel cu
+          scena, umbra lui era la fel de lungă. Dacă îl înclina, umbra se
+          micșora. Dacă bastonul stătea perfect perpendicular pe scenă, umbra
+          lui devenea doar un singur punct!
+        </p>
+        <p>
+          <strong>Concluzie:</strong> Proiecția este vocea unei forme 3D care
+          încearcă să vorbească pe limba unei lumi 2D.
+        </p>
+      </div>
+
+      <div class="definition-box">
+        <div class="def-label">Ce este proiecția ortogonală?</div>
+        <p>
+          Proiecția ortogonală a unei figuri pe un plan este „umbra" lăsată de
+          acea figură atunci când lumina vine de la o distanță infinită și cade
+          perpendicular pe plan.
+        </p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tip proiecție</th>
+            <th>Ce trebuie reținut</th>
+            <th>Observații după exerciții</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Proiecția unui punct pe plan</strong></td>
+            <td>
+              Piciorul perpendicularei duse din punct pe plan. Dacă punctul
+              aparține planului, proiecția este chiar punctul.
+            </td>
+            <td>Proiecția unui punct = piciorul perpendicularei.</td>
+          </tr>
+          <tr>
+            <td><strong>Proiecția unui segment pe plan</strong></td>
+            <td>
+              Se proiectează capetele segmentului. Rezultatul este un segment
+              sau un punct.
+            </td>
+            <td>
+              Segment oblic → proiecție mai mică. Segment perpendicular →
+              proiecție punct. Segment paralel → proiecție egală.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Proiecția unei drepte pe plan</strong></td>
+            <td>
+              Se proiectează două puncte ale dreptei. Dacă dreapta ⊥ plan →
+              proiecție punct. Dacă nu → proiecție dreaptă.
+            </td>
+            <td>
+              Dacă o dreaptă intersectează planul, punctul de intersecție
+              aparține proiecției.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Proiecția unei figuri pe plan</strong></td>
+            <td>Mulțimea proiecțiilor tuturor punctelor figurii.</td>
+            <td>Distanța = perpendiculara.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="theorem-box">
+        <div class="thm-label">Teoremă — Proiecția segmentelor</div>
+        <p>
+          Fie AB un segment și α un plan. Notăm A' = pr<sub>α</sub>A și B' =
+          pr<sub>α</sub>B.
+        </p>
+        <ol>
+          <li>
+            Dacă <strong>AB nu este ⊥ α</strong>, atunci proiecția segmentului
+            AB pe planul α este segmentul A'B'.
+          </li>
+          <li>
+            Dacă <strong>AB ⊥ α</strong>, atunci proiecția segmentului AB pe
+            planul α este un punct C.
+          </li>
+        </ol>
+      </div>
+
+      <div class="theorem-box">
+        <div class="thm-label">Consecințe</div>
+        <ol>
+          <li>
+            Proiecția mijlocului unui segment pe un plan este mijlocul
+            segmentului determinat de proiecțiile capetelor.
+          </li>
+          <li>
+            Dacă B aparține segmentului AC, atunci B' aparține segmentului A'C'.
+          </li>
+          <li>
+            <strong
+              >Lungimea proiecției unui segment pe un plan este cel mult egală
+              cu lungimea segmentului dat.</strong
+            >
+          </li>
+        </ol>
+      </div>
+
+      <div class="error-box">
+        <div class="err-label">Greșeli tipice de evitat</div>
+        <ul>
+          <li>
+            Să crezi că proiecția este mereu egală cu obiectul. (Proiecția este
+            aproape mereu mai scurtă sau egală, niciodată mai lungă!)
+          </li>
+          <li>
+            Să uiți să desenezi unghiul drept (90°) acolo unde „umbra" se
+            întâlnește cu „perpendiculara".
+          </li>
+        </ul>
+      </div>
+
+      <!-- APPLICATIONS PROJECTIONS -->
+      <div class="app-box">
+        <div class="app-label">Aplicație 1 — Proiecția unui punct</div>
+        <p>
+          Se dă un punct A în afara planului α. Se duce perpendiculara AH pe
+          plan, cu AH = 6 cm.
+        </p>
+        <ul>
+          <li>
+            Prin definiție, proiecția unui punct pe plan este piciorul
+            perpendicularei.
+          </li>
+          <li>AH ⊥ α, punctul H se află în plan.</li>
+          <li>
+            <strong>Concluzie:</strong> H este proiecția lui A pe plan și
+            distanța de la A la plan este <strong>6 cm</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">Aplicație 2 — Segment oblic</div>
+        <p>
+          Segmentul AB = 10 cm, înclinat față de planul α. Proiecția sa pe plan
+          este A'B' = 8 cm.
+        </p>
+        <ul>
+          <li>Proiecția unui segment oblic este mai mică decât segmentul.</li>
+          <li>
+            <strong>Concluzie:</strong> AB = 10 cm &gt; A'B' = 8 cm. Segmentul
+            AB este mai mare decât proiecția sa.
+          </li>
+        </ul>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">Aplicație 3 — Segment perpendicular pe plan</div>
+        <p>
+          Dacă segmentul este perpendicular pe plan, proiecția punctului A este
+          H și proiecția punctului B este tot H (același punct).
+        </p>
+        <p>
+          <strong>Concluzie:</strong> Proiecția segmentului este
+          <strong>un punct</strong>.
+        </p>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">Aplicație 4 — Segment paralel cu planul</div>
+        <p>Segmentul AB este paralel cu planul α și are lungimea 7 cm.</p>
+        <ul>
+          <li>
+            Dacă segmentul este paralel cu planul, proiecția păstrează aceeași
+            lungime.
+          </li>
+          <li>
+            <strong>Concluzie:</strong> Proiecția are tot <strong>7 cm</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <div class="app-box">
+        <div class="app-label">Aplicație 5 — Distanța de la punct la plan</div>
+        <p>
+          Un punct A este situat deasupra planului. Perpendiculara dusă din A pe
+          plan are lungimea 9 cm.
+        </p>
+        <ul>
+          <li>
+            Distanța de la un punct la un plan este lungimea perpendicularei.
+          </li>
+          <li>
+            <strong>Concluzie:</strong> Distanța este <strong>9 cm</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <h2>4. Unghiul dintre o dreaptă și un plan</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Poveste — „Dimineața în care totul era un unghi"</th>
+            <th>Poveste — „Scara care voia să fie celebră"</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Andrei s-a trezit și a deschis cartea de pe birou — coperțile
+              formau un unghi. Și-a deschis laptopul — ecranul s-a ridicat
+              deasupra tastaturii: din nou un unghi. Pe drum a văzut
+              acoperișurile caselor — două pante se întâlneau. Ajuns în clasă,
+              și-a sprijinit scara de perete, oblică. Profesorul a întrebat: „Ce
+              au toate acestea în comun?" — „Formează unghiuri!" a răspuns
+              clasa. „Da. Dar astăzi vorbim despre unghiul dintre o dreaptă și
+              un plan."
+            </td>
+            <td>
+              O scară sprijinită de un perete ofta: „Nimeni nu mă măsoară!"
+              Podeaua a intervenit: „Eu sunt un plan. Tu ești o dreaptă. Cât de
+              înclinată ești față de mine — asta e întrebarea adevărată!" Scara
+              s-a uitat la umbra ei pe podea: „Deci dacă vreau să știu cât de
+              înclinată sunt... trebuie să mă compar cu umbra mea?" Și de aici
+              începe lecția:
+              <strong
+                >Unghiul dintre o dreaptă și un plan este unghiul dintre dreapta
+                și proiecția ei pe plan.</strong
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="definition-box">
+        <div class="def-label">Definiție</div>
+        <p>
+          Fie o dreaptă d și un plan α. Se definește
+          <strong>unghiul dintre o dreaptă și un plan</strong> ca unghiul format
+          între dreapta d și proiecția sa ortogonală d' pe planul α.
+        </p>
+        <p>
+          Cu alte cuvinte: este unghiul dintre dreapta dată și „umbra" ei pe
+          plan.
+        </p>
+      </div>
+
+      <div class="obs-box">
+        <strong>Cazuri speciale:</strong>
+        <ul>
+          <li>
+            Dacă dreapta este <strong>perpendiculară pe plan</strong> → unghiul
+            este <strong>90°</strong>
+          </li>
+          <li>
+            Dacă dreapta este <strong>paralelă cu planul</strong> → unghiul este
+            <strong>0°</strong>
+          </li>
+          <li>
+            Dacă dreapta este <strong>oblică</strong> → unghiul este între 0° și
+            90°
+          </li>
+        </ul>
+      </div>
+
+      <div class="theorem-box">
+        <div class="thm-label">Teorema 1</div>
+        <p>
+          Unghiul dintre o dreaptă și un plan este complementar cu unghiul
+          dintre dreaptă și perpendiculara pe plan.
+        </p>
+        <span class="formula">∠(d, α) + ∠(d, n) = 90°</span>
+        <p>unde n este normala planului.</p>
+      </div>
+
+      <div class="theorem-box">
+        <div class="thm-label">Teorema 2</div>
+        <p>
+          Dacă o dreaptă este perpendiculară pe două drepte concurente din plan,
+          atunci este perpendiculară pe plan.
+        </p>
+      </div>
+
+      <div class="theorem-box">
+        <div class="thm-label">Teorema 3 — Lungimea proiecției</div>
+        <span class="formula">A'B' = AB · cos θ</span>
+        <p>unde θ este unghiul dintre dreaptă și plan.</p>
+      </div>
+
+      <div class="intuition-block">
+        <div class="int-label">Consecințe importante</div>
+        <ul class="checks">
+          <li>Proiecția este întotdeauna mai mică sau egală cu segmentul.</li>
+          <li>Distanța de la punct la plan este lungimea perpendicularei.</li>
+          <li>Unghiul controlează „cât de înclinat" este segmentul.</li>
+        </ul>
+      </div>
+
+      <!-- COMPARISON TABLE DREAPTĂ–DREAPTĂ vs DREAPTĂ–PLAN -->
+      <h3>Schemă comparativă</h3>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Dreaptă – Dreaptă</th>
+            <th>Dreaptă – Plan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>I. Definiție</strong></td>
+            <td>
+              Unghiul format de două drepte care se intersectează. Se măsoară
+              direct în punctul de intersecție.
+            </td>
+            <td>
+              Unghiul dintre dreapta dată și proiecția ei ortogonală pe plan. Se
+              construiește prin proiecție.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>II. Construcție</strong></td>
+            <td>Se identifică punctul comun. Se măsoară unghiul dintre ele.</td>
+            <td>
+              Se alege un punct A pe dreaptă. Se duce perpendiculara AH pe plan.
+              Se construiește proiecția segmentului pe plan. Unghiul căutat este
+              între dreaptă și proiecție.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>III. Cazuri particulare</strong></td>
+            <td>
+              0° — paralele; 90° — perpendiculare; între 0° și 90° — oblice.
+            </td>
+            <td>
+              0° — paralelă cu planul; 90° — perpendiculară pe plan; între 0° și
+              90° — oblică față de plan.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>IV. Formule</strong></td>
+            <td><span class="formula">cos θ = (u·v) / (|u|·|v|)</span></td>
+            <td>
+              <span class="formula"
+                >cos θ = proiecție / segment, sau θ + ∠(d,n) = 90°</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><strong>V. Greșeala tipică</strong></td>
+            <td colspan="2">
+              Elevii caută un unghi „vizual" în desen; confundă unghiul cu cel
+              față de perpendiculara pe plan; uită că trebuie proiecția.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>VI. Intuiție din viața reală</strong></td>
+            <td>
+              Foarfeca deschisă; două străzi care se intersectează; muchiile
+              unui cub.
+            </td>
+            <td>
+              Scară sprijinită de perete; avion care decolează; acoperișul
+              casei.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="error-box">
+        <div class="err-label">Greșeli frecvente ale elevilor</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Greșeală</th>
+              <th>Ce trebuie știut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Confundă unghiul dintre dreaptă și plan cu unghiul față de
+                perpendiculara pe plan sau față de o dreaptă oarecare din plan.
+              </td>
+              <td>
+                Unghiul este între dreapta dată și
+                <strong>proiecția ei ortogonală</strong> pe plan.
+              </td>
+            </tr>
+            <tr>
+              <td>Uită să construiască proiecția.</td>
+              <td>Fără proiecție corectă, nu există unghi corect.</td>
+            </tr>
+            <tr>
+              <td>
+                Dacă dreapta ∥ planului → spun că unghiul e 90°. Dacă dreapta ⊥
+                planului → spun că unghiul e 0°.
+              </td>
+              <td>∥ → 0°; ⊥ → 90°; oblic → între 0° și 90°.</td>
+            </tr>
+            <tr>
+              <td>
+                Confundă cos θ = proiecție/segment cu sin θ = proiecție/segment.
+              </td>
+              <td><span class="formula">Proiecție = segment × cos θ</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr />
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <h2>5. Unghiul dintre două plane — Unghiul diedru</h2>
+
+      <p>
+        Unghiul diedru este unul dintre conceptele fundamentale ale geometriei
+        în spațiu, esențial pentru înțelegerea modului în care două plane
+        interacționează.
+      </p>
+
+      <div class="story-block">
+        <div class="story-title">👑 Legenda Celor Două Regate Plane</div>
+        <p>
+          A fost odată ca niciodată, în Spațiul 3D, două regate vecine:
+          <strong>Regatul de Azur</strong> (un plan albastru) și
+          <strong>Regatul de Chihlimbar</strong> (un plan auriu). Până într-o
+          zi, când Regatul de Chihlimbar s-a înclinat...
+        </p>
+        <p>
+          Locul unde s-au atins a devenit o linie dreaptă, strălucitoare și
+          infinită: <strong>Muchia Diedrului</strong>.
+        </p>
+        <p>
+          Un înțelept a coborât pe Muchie și a spus: „Pentru a afla deschiderea
+          dintre lumile voastre, trebuie să fiți drepți! Alegeți un punct pe
+          graniță. Trimiteți un sol din Regatul de Azur perpendicular pe
+          graniță. Trimiteți un sol din Regatul de Chihlimbar, tot
+          perpendicular. Unghiul format de brațele celor doi soli va fi singura
+          măsură adevărată:
+          <strong>Unghiul Plan Corespunzător Diedrului</strong>."
+        </p>
+        <p>
+          <strong>Morala:</strong> Orice „deschidere" (ca la o ușă, o carte sau
+          un acoperiș) este guvernată de regula celor doi soli perpendiculari.
+          Dacă ei nu pleacă din același punct și nu sunt perpendiculari pe
+          muchie, unghiul lor e doar o iluzie.
+        </p>
+      </div>
+
+      <div class="definition-box">
+        <div class="def-label">Definiție și Construcție</div>
+        <p>
+          <strong>Unghiul diedru</strong> este figura geometrică formată de două
+          semiplane care au o frontieră comună.
+        </p>
+        <ul>
+          <li><strong>Fețele diedrului:</strong> Cele două semiplane.</li>
+          <li>
+            <strong>Muchia diedrului:</strong> Dreapta comună (frontiera).
+          </li>
+        </ul>
+        <p>
+          Pentru a calcula „deschiderea" dintre două plane, construim
+          <strong>unghiul plan corespunzător</strong>:
+        </p>
+        <ol>
+          <li>Alegem un punct O pe muchia diedrului (dreapta d).</li>
+          <li>
+            Construim o dreaptă a în primul plan, astfel încât a ⊥ d în O.
+          </li>
+          <li>
+            Construim o dreaptă b în al doilea plan, astfel încât b ⊥ d în O.
+          </li>
+          <li>
+            Unghiul format de dreptele a și b este
+            <strong>unghiul plan corespunzător diedrului</strong>.
+          </li>
+        </ol>
+      </div>
+
+      <h3>Exemple din viața cotidiană</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Obiect</th>
+            <th>Muchia diedrului</th>
+            <th>Fețele diedrului</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>O carte deschisă</td>
+            <td>Muchia cărții</td>
+            <td>Coperțile cărții</td>
+          </tr>
+          <tr>
+            <td>Laptopul</td>
+            <td>Balamaua</td>
+            <td>Ecranul și tastatura</td>
+          </tr>
+          <tr>
+            <td>Pereții unei camere</td>
+            <td>Muchia verticală</td>
+            <td>Cei doi pereți (unghi de 90°)</td>
+          </tr>
+          <tr>
+            <td>Acoperișul unei case</td>
+            <td>Coama acoperișului</td>
+            <td>Cele două pante</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="intuition-block">
+        <div class="int-label">Truc mnemonic — Ușa</div>
+        <p>
+          Când repeți teoria unghiului diedru, imaginează-ți o ușă care se
+          deschide:
+        </p>
+        <ul>
+          <li><strong>Balamaua</strong> = muchia diedrului d</li>
+          <li><strong>Peretele și ușa</strong> = cele două plane</li>
+          <li>
+            Dacă trasezi o linie orizontală pe perete și una pe ușă, ambele
+            plecând din același punct de pe balama, ai obținut
+            <strong>unghiul plan corespunzător</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Greșeli tipice</th>
+            <th>Ce trebuie știut după predare</th>
+            <th>Nivel avansat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Elevii iau orice două drepte din planele respective și cred că
+              acela este unghiul. Dreptele <strong>trebuie</strong> să fie
+              perpendiculare pe muchie în același punct.
+            </td>
+            <td>
+              Să identifice muchia și fețele într-o figură geometrică (ex:
+              piramidă).
+            </td>
+            <td>
+              <strong>Teorema celor trei perpendiculare (T3P):</strong>
+              instrumentul principal pentru a demonstra că o dreaptă este
+              perpendiculară pe muchie în probleme complexe.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Confuzia cu unghiul dintre două drepte — se reduce la un unghi
+              între drepte doar după construcția perpendicularității duble.
+            </td>
+            <td>
+              Să enunțe pașii de construcție a unghiului plan corespunzător.
+            </td>
+            <td>
+              <strong>Calculul trigonometric:</strong> utilizarea sin, cos, tan
+              în triunghiul format de unghiul plan.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vizualizare greșită în 2D — mulți desenează planele ca pe niște
+              linii și pierd din vedere că muchia este o dreaptă infinită.
+            </td>
+            <td>
+              Să recunoască planele perpendiculare (unghiul diedru = 90°).
+            </td>
+            <td>
+              <strong>Proiecția unei arii:</strong>
+              <span class="formula"
+                >A<sub>proiecție</sub> = A<sub>inițial</sub> · cos θ</span
+              >
+              (utilă la examen).
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

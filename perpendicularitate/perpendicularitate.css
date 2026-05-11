@@ -1,0 +1,334 @@
+:root {
+  --ink: #1a1a2e;
+  --soft: #2d2d4e;
+  --accent: #c0392b;
+  --gold: #b8860b;
+  --bg: #faf8f4;
+  --card: #ffffff;
+  --border: #d4c9b0;
+  --muted: #6b6b8a;
+  --highlight: #fff3cd;
+  --green-bg: #f0f7f0;
+  --green-border: #4a7c59;
+  --red-bg: #fdf0f0;
+  --red-border: #c0392b;
+  --blue-bg: #eef4fb;
+  --blue-border: #2471a3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+  padding: 0;
+}
+
+.page-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 40px 100px;
+}
+
+/* ── HEADINGS ── */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 18px;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--soft);
+  margin: 50px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--accent);
+}
+
+h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 32px 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── PARAGRAPHS ── */
+p {
+  margin-bottom: 14px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── STORY BLOCKS ── */
+.story-block {
+  background: linear-gradient(135deg, #fef9f0 0%, #fdf5e4 100%);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--gold);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin: 24px 0;
+}
+
+.story-block p {
+  margin-bottom: 10px;
+}
+.story-block .story-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 14px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ── BULLET LISTS ── */
+ul {
+  margin: 12px 0 16px 22px;
+}
+ul li {
+  margin-bottom: 7px;
+}
+
+ol {
+  margin: 12px 0 16px 22px;
+}
+ol li {
+  margin-bottom: 7px;
+}
+
+/* ── DEFINITION BOXES ── */
+.definition-box {
+  background: var(--blue-bg);
+  border: 1px solid var(--blue-border);
+  border-left: 5px solid var(--blue-border);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+
+.definition-box .def-label {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: var(--blue-border);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── IMPORTANT NOTES ── */
+.obs-box {
+  background: var(--highlight);
+  border: 1px solid #f0c040;
+  border-left: 5px solid #e6a817;
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin: 14px 0;
+  font-size: 0.95rem;
+}
+
+.obs-box strong {
+  color: var(--soft);
+}
+
+/* ── WARNING / ATENTIE ── */
+.warning-box {
+  background: #fff0f0;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 22px 0;
+  text-align: center;
+}
+
+.warning-box .warn-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+}
+
+/* ── PROPOSITION / THEOREM BOXES ── */
+.theorem-box {
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
+  border-left: 5px solid var(--green-border);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+
+.theorem-box .thm-label {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: var(--green-border);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── APPLICATION BOXES ── */
+.app-box {
+  background: #f8f4ff;
+  border: 1px solid #9b59b6;
+  border-left: 5px solid #9b59b6;
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 18px 0;
+}
+
+.app-box .app-label {
+  font-weight: 700;
+  color: #7d3c98;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── COMPARISON TABLE ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 22px 0;
+  font-size: 0.92rem;
+}
+
+th {
+  background: var(--soft);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
+
+td {
+  padding: 11px 16px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #f5f0ea;
+}
+
+/* ── ERROR BOXES ── */
+.error-box {
+  background: var(--red-bg);
+  border: 1px solid var(--red-border);
+  border-left: 5px solid var(--red-border);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin: 14px 0;
+}
+
+.error-box .err-label {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── MATH INLINE ── */
+.math {
+  font-family: "Times New Roman", serif;
+  font-size: 1em;
+}
+
+/* ── HORIZONTAL RULE ── */
+hr {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 48px 0;
+}
+
+/* ── SECTION DIVIDER ── */
+.section-divider {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.4rem;
+  margin: 36px 0;
+  letter-spacing: 0.3em;
+}
+
+/* ── FORMULA HIGHLIGHT ── */
+.formula {
+  display: block;
+  background: #f0edfb;
+  border: 1px solid #c39bd3;
+  border-radius: 6px;
+  padding: 12px 20px;
+  margin: 14px auto;
+  font-family: "Times New Roman", serif;
+  font-size: 1.05em;
+  text-align: center;
+  max-width: 520px;
+}
+
+/* ── INTUITION BLOCK ── */
+.intuition-block {
+  background: #eafaf1;
+  border: 1px solid #27ae60;
+  border-left: 5px solid #27ae60;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+.intuition-block .int-label {
+  font-weight: 700;
+  color: #1e8449;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── CHECK MARKS ── */
+.checks li::marker {
+  color: var(--green-border);
+}
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding: 30px 18px 60px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  table {
+    font-size: 0.82rem;
+  }
+  th,
+  td {
+    padding: 8px 10px;
+  }
+}
